@@ -1602,9 +1602,8 @@
         <image name="cancelButton" width="183" height="171"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IWY-rZ-28W"/>
         <segue reference="xIa-3o-He0"/>
-        <segue reference="L6i-TR-zKe"/>
+        <segue reference="uE6-E8-z5S"/>
         <segue reference="YLh-uM-RMg"/>
     </inferredMetricsTieBreakers>
 </document>
