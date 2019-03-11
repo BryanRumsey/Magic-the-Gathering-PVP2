@@ -5,6 +5,6 @@
       location = "group:Magic the Gathering PVP.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/bryanrumsey/Documents/Magic-the-Gathering-PVP2/Pods/Pods2.xcodeproj">
+      location = "group:/Users/bryanrumsey/Documents/Magic-the-Gathering-PVP2/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

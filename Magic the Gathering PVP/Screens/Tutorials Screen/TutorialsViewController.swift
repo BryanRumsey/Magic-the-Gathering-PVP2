@@ -25,6 +25,7 @@ class tutorialViewController: UIViewController {
     var titles: [String] = []
     
     var videoPlayer: AVPlayerViewController?
+    var video: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,12 @@ class tutorialViewController: UIViewController {
         tutorialsTableView.dataSource = self
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        stopVideo()
+    }
+    
     func getTutorialInformation(){
         let infoRef = ref.child("tutorials")
         infoRef.observe(.childAdded, with: { (snapshot) in
@@ -47,16 +54,25 @@ class tutorialViewController: UIViewController {
     }
     
     func playVideo(name: String, type: String) {
+        stopVideo()
+        
         let path = Bundle.main.path(forResource: name, ofType: type)
         let url = URL(fileURLWithPath: path!)
-        let video = AVPlayer(url: url)
+        video = AVPlayer(url: url)
         
         self.videoPlayer = AVPlayerViewController()
         self.videoPlayer!.view.frame = viewVP.bounds
         self.videoPlayer!.player = video
         
         self.viewVP.addSubview(self.videoPlayer!.view)
-        video.play()
+        video!.play()
+    }
+    
+    func stopVideo(){
+        if video != nil {
+            self.video?.pause()
+            self.video = nil
+        }
     }
 }
 
