@@ -12,6 +12,8 @@ import Firebase
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var usersName: UILabel!
+    @IBOutlet weak var coinImage: UIImageView!
+    @IBOutlet weak var numberOfCoins: UILabel!
     
     let userID = Auth.auth().currentUser?.uid
     var ref: DatabaseReference!
@@ -31,13 +33,21 @@ class HomeViewController: UIViewController {
             usersFullName = firstName + " " + lastName
         }
     }
+    var coins: Int = 0 {
+        didSet {
+            numberOfCoins.text = "\(coins)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        coinImage.layer.cornerRadius = 15
+        
         ref = Database.database().reference()
         
         getUsersFirstName()
+        getUsersCoins()
     }
     
     func getUsersFirstName() {
@@ -51,6 +61,13 @@ class HomeViewController: UIViewController {
         let lastNRef = ref.child("users/\(self.userID!)/lastName")
         lastNRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.lastName = snapshot.value as! String
+        })
+    }
+    
+    func getUsersCoins(){
+        let lastNRef = ref.child("users/\(self.userID!)/coins")
+        lastNRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.coins = snapshot.value as! Int
         })
     }
     

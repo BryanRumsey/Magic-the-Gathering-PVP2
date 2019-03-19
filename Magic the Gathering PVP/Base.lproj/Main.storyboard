@@ -257,11 +257,11 @@
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEd-g4-NKP">
-                                <rect key="frame" x="72.5" y="508" width="175" height="30"/>
+                                <rect key="frame" x="190" y="508" width="100" height="30"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2S0-ve-bVo"/>
-                                    <constraint firstAttribute="width" constant="175" id="IoL-ZN-2Vf"/>
+                                    <constraint firstAttribute="width" constant="100" id="IoL-ZN-2Vf"/>
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -384,6 +384,30 @@
                                     <segue destination="MGN-pZ-7NN" kind="showDetail" id="IWY-rZ-28W"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="n3q-eV-us3">
+                                <rect key="frame" x="30" y="508" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7L0-Qk-JX5"/>
+                                    <constraint firstAttribute="width" constant="30" id="YiL-h5-5Z0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVG-5I-sOc">
+                                <rect key="frame" x="68" y="508" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Cs4-Ip-Zvj"/>
+                                    <constraint firstAttribute="height" constant="30" id="S4W-Sj-Oye"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="20" name="ChalkboardSE-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -395,22 +419,28 @@
                             <constraint firstItem="xub-PR-hIQ" firstAttribute="centerX" secondItem="eFR-HX-FA9" secondAttribute="centerX" id="CMI-SO-LLJ"/>
                             <constraint firstItem="ZXv-ct-ibx" firstAttribute="trailing" secondItem="wX9-Kc-kpx" secondAttribute="trailing" id="Egn-4k-Usy"/>
                             <constraint firstItem="ZXv-ct-ibx" firstAttribute="top" secondItem="H4C-Mf-Wpd" secondAttribute="top" constant="10" id="Jfg-dD-0iH"/>
+                            <constraint firstItem="BVG-5I-sOc" firstAttribute="leading" secondItem="n3q-eV-us3" secondAttribute="trailing" constant="8" id="V5L-ye-eLF"/>
+                            <constraint firstItem="ZXv-ct-ibx" firstAttribute="bottom" secondItem="n3q-eV-us3" secondAttribute="bottom" constant="30" id="XHt-qY-cWv"/>
                             <constraint firstItem="xub-PR-hIQ" firstAttribute="top" secondItem="eFR-HX-FA9" secondAttribute="bottom" constant="16" id="YHE-xD-twb"/>
+                            <constraint firstItem="ZXv-ct-ibx" firstAttribute="bottom" secondItem="BVG-5I-sOc" secondAttribute="bottom" constant="30" id="ZgL-yo-59e"/>
                             <constraint firstItem="ZDW-WO-BCm" firstAttribute="centerX" secondItem="xub-PR-hIQ" secondAttribute="centerX" id="dBm-dF-lgP"/>
                             <constraint firstItem="ZXv-ct-ibx" firstAttribute="bottom" secondItem="dEd-g4-NKP" secondAttribute="bottom" constant="30" id="eOb-st-pMD"/>
                             <constraint firstItem="eUq-ZV-Rbs" firstAttribute="centerX" secondItem="H4C-Mf-Wpd" secondAttribute="centerX" id="fts-tr-fLy"/>
                             <constraint firstItem="H4C-Mf-Wpd" firstAttribute="centerX" secondItem="ZXv-ct-ibx" secondAttribute="centerX" id="gOF-ij-1fk"/>
                             <constraint firstItem="ZXv-ct-ibx" firstAttribute="top" secondItem="wX9-Kc-kpx" secondAttribute="top" constant="20" id="iPM-tR-esQ"/>
-                            <constraint firstItem="dEd-g4-NKP" firstAttribute="centerX" secondItem="ZXv-ct-ibx" secondAttribute="centerX" id="jPq-O6-W0T"/>
+                            <constraint firstItem="ZXv-ct-ibx" firstAttribute="trailing" secondItem="dEd-g4-NKP" secondAttribute="trailing" constant="30" id="lFq-Ph-DLm"/>
                             <constraint firstItem="eUq-ZV-Rbs" firstAttribute="top" secondItem="DWD-bt-osZ" secondAttribute="bottom" constant="8" id="lZb-et-IEA"/>
                             <constraint firstItem="ZDW-WO-BCm" firstAttribute="top" secondItem="xub-PR-hIQ" secondAttribute="bottom" constant="16" id="oRq-Wk-Ka0"/>
                             <constraint firstItem="5XX-Nl-Lgl" firstAttribute="centerX" secondItem="ZXv-ct-ibx" secondAttribute="centerX" id="pEi-pm-TMx"/>
+                            <constraint firstItem="n3q-eV-us3" firstAttribute="leading" secondItem="ZXv-ct-ibx" secondAttribute="leading" constant="30" id="qCq-Ui-FRd"/>
                             <constraint firstItem="eUq-ZV-Rbs" firstAttribute="top" secondItem="H4C-Mf-Wpd" secondAttribute="bottom" constant="125" id="t6I-ge-1RL"/>
                             <constraint firstItem="DWD-bt-osZ" firstAttribute="centerX" secondItem="eUq-ZV-Rbs" secondAttribute="centerX" id="wxz-PE-wM1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZXv-ct-ibx"/>
                     </view>
                     <connections>
+                        <outlet property="coinImage" destination="n3q-eV-us3" id="VEY-Zf-afe"/>
+                        <outlet property="numberOfCoins" destination="BVG-5I-sOc" id="xbN-uX-HLN"/>
                         <outlet property="usersName" destination="DWD-bt-osZ" id="qDf-Pz-Tdt"/>
                         <segue destination="sDK-RT-akq" kind="showDetail" identifier="logout" id="YLh-uM-RMg"/>
                     </connections>
@@ -1598,8 +1628,10 @@
         <image name="Mana_Collection3" width="1600" height="1200"/>
         <image name="background" width="468" height="312"/>
         <image name="cancelButton" width="183" height="171"/>
+        <image name="coin" width="224" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="IWY-rZ-28W"/>
         <segue reference="xIa-3o-He0"/>
         <segue reference="L6i-TR-zKe"/>
         <segue reference="YLh-uM-RMg"/>
