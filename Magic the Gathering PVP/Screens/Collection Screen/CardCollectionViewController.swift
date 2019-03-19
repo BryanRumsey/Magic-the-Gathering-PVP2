@@ -37,6 +37,8 @@ class CardCollectionViewController: UIViewController {
     var cardKeysArray: [String] = []
     var cardNamesArray: [String] = []
     
+    var cardBoxLimit: Int = 0
+    
     var postHandle1: DatabaseHandle!
     var postHandle2: DatabaseHandle!
     
@@ -50,6 +52,7 @@ class CardCollectionViewController: UIViewController {
         userID = (Auth.auth().currentUser?.uid)!
         
         displayCollections()
+        
         
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
@@ -81,6 +84,13 @@ class CardCollectionViewController: UIViewController {
         let coverCRef = ref.child("users/\(userID)/collection/\(name)/cover")
         coverCRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.displayArray1.append(snapshot.value as! String)
+        })
+    }
+    
+    func getCardBoxLimit(){
+        let cblRef = ref.child("users/\(userID)/cardBoxLimit")
+        cblRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.cardBoxLimit = snapshot.value as! Int
         })
     }
     
@@ -254,8 +264,16 @@ extension CardCollectionViewController: UICollectionViewDataSource, UICollection
                 self.performSegue(withIdentifier: "createLibrary", sender: self)
             }
         } else {
-            if cardNamesArray[indexPath.row] == "addCard" {
-                addCardToCardBox()
+            if cardNamesArray[indexPath.row] == "addCard"{
+                if displayArray2.count - 1 < cardBoxLimit {
+                    addCardToCardBox()
+                } else {
+                    let alert = UIAlertController(title: "Card Box Limit Reached", message: "You have reached the maximum number of card that your Card Box can hold.  If you wish to add another card you can remove cards from your Card Box or you may purchase a Card Box Expansion.", preferredStyle: UIAlertController.Style.alert)
+                    let cancel = UIAlertAction(title: "Close", style: .default) { (alertAction) in }
+                    alert.addAction(cancel)
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
             }
         }
     }

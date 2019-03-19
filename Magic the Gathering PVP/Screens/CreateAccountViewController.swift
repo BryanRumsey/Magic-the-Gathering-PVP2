@@ -54,6 +54,8 @@ class CreateAccountViewController: UIViewController {
                 
                 self.ref.child("users").child(user.uid).setValue(["firstName":self.firstName.text, "lastName":self.lastName.text, "email":self.username.text])
                 self.ref.child("users/\(user.uid)").child("role").setValue("user")
+                self.ref.child("users/\(user.uid)").child("coins").setValue("120")
+                self.ref.child("users/\(user.uid)").child("cardBoxLimit").setValue("60")
                 self.ref.child("users/\(user.uid)").child("collection").child("Card Box").setValue(["cover":"cardBoxCover", "cards":"empty"])
                 self.performSegue(withIdentifier: "createAccount", sender: self)
             }
