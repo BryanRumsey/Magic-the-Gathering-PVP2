@@ -14,9 +14,12 @@ class ResetPasswordViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var usernameError: UILabel!
     @IBOutlet weak var resetInstructions: UILabel!
+    @IBOutlet weak var resetPassword: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resetPassword.layer.cornerRadius = 10
     }
     
     @IBAction func resetPassword(_ sender: Any) {
