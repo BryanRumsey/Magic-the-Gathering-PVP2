@@ -204,6 +204,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vZQ-3s-Ihq"/>
                     <connections>
+                        <outlet property="loginButton" destination="UiQ-Oe-CKC" id="fKb-S8-Hun"/>
                         <outlet property="password" destination="72c-aC-r2f" id="BDU-Ak-E2i"/>
                         <outlet property="passwordError" destination="YyE-ay-tVu" id="qva-d2-v7t"/>
                         <outlet property="username" destination="Pso-Q5-Hkl" id="Nka-6U-Efa"/>
@@ -463,8 +464,14 @@
                         <viewLayoutGuide key="safeArea" id="ZXv-ct-ibx"/>
                     </view>
                     <connections>
+                        <outlet property="challengePlayerButton" destination="eFR-HX-FA9" id="jEX-K0-i8v"/>
+                        <outlet property="chatRoomButton" destination="xub-PR-hIQ" id="c80-hU-ZeD"/>
                         <outlet property="coinImage" destination="n3q-eV-us3" id="VEY-Zf-afe"/>
+                        <outlet property="collectionsButton" destination="eUq-ZV-Rbs" id="GSM-r8-DMG"/>
+                        <outlet property="logoutButton" destination="dEd-g4-NKP" id="1RY-CG-ovb"/>
+                        <outlet property="magicShopButton" destination="UF3-Mb-uzE" id="ADh-TG-gBI"/>
                         <outlet property="numberOfCoins" destination="BVG-5I-sOc" id="xbN-uX-HLN"/>
+                        <outlet property="tutorialsButton" destination="ZDW-WO-BCm" id="uNZ-FQ-NiC"/>
                         <outlet property="usersName" destination="DWD-bt-osZ" id="qDf-Pz-Tdt"/>
                         <segue destination="sDK-RT-akq" kind="showDetail" identifier="logout" id="YLh-uM-RMg"/>
                     </connections>
@@ -655,7 +662,7 @@
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Submit">
+                                        <fragment content="Create Account">
                                             <attributes>
                                                 <color key="NSColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <font key="NSFont" size="20" name="ChalkboardSE-Light"/>
@@ -712,6 +719,7 @@
                         <viewLayoutGuide key="safeArea" id="kYC-5X-L4P"/>
                     </view>
                     <connections>
+                        <outlet property="createAccountButton" destination="tvS-O4-SuH" id="pgg-nx-R6g"/>
                         <outlet property="firstName" destination="Zy9-9j-Vev" id="qul-Rs-FW4"/>
                         <outlet property="lastName" destination="TkQ-1x-ClN" id="5sw-rX-f93"/>
                         <outlet property="password" destination="AUW-Zw-6XD" id="pHj-Hk-CA5"/>
@@ -1090,7 +1098,9 @@
                     <connections>
                         <outlet property="chatName" destination="foC-CI-AUb" id="pue-hG-G4o"/>
                         <outlet property="chatRoomTableView" destination="xgC-HQ-HF4" id="Piu-y5-gJR"/>
+                        <outlet property="exitChatButton" destination="mHE-t7-3Cm" id="vcC-oO-k8m"/>
                         <outlet property="message" destination="Wz9-51-v8Z" id="8AQ-pt-PbX"/>
+                        <outlet property="postMessageButton" destination="dtd-Ua-GDk" id="qBI-r0-1hL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uof-KU-6jq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1865,8 +1875,8 @@
         <image name="coin" width="224" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xIa-3o-He0"/>
-        <segue reference="J0f-Vl-1kI"/>
-        <segue reference="mFm-wR-ahH"/>
+        <segue reference="aEc-G5-nnh"/>
+        <segue reference="uE6-E8-z5S"/>
+        <segue reference="YLh-uM-RMg"/>
     </inferredMetricsTieBreakers>
 </document>

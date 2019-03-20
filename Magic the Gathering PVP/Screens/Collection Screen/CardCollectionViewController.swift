@@ -45,6 +45,9 @@ class CardCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        editLibraryButton.layer.cornerRadius = 15
+        deleteLibraryButton.layer.cornerRadius = 15
+        
         cardCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
         cardLibraryView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
         

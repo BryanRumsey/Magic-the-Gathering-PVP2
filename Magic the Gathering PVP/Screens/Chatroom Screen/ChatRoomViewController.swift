@@ -13,6 +13,8 @@ class chatRoomViewController: UIViewController {
     
     @IBOutlet weak var chatName: UILabel!
     @IBOutlet weak var message: UITextField!
+    @IBOutlet weak var exitChatButton: UIButton!
+    @IBOutlet weak var postMessageButton: UIButton!
     
     @IBOutlet weak var chatRoomTableView: UITableView!
     
@@ -24,6 +26,9 @@ class chatRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        exitChatButton.layer.cornerRadius = 15
+        postMessageButton.layer.cornerRadius = 15
         
         chatRoomTableView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
         

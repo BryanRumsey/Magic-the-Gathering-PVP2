@@ -18,11 +18,14 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
     @IBOutlet weak var passwordError: UILabel!
+    @IBOutlet weak var createAccountButton: UIButton!
     
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createAccountButton.layer.cornerRadius = 15
         
         ref = Database.database().reference()
     }

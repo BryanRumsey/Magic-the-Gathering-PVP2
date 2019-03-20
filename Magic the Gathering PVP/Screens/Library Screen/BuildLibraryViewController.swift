@@ -56,6 +56,9 @@ class buildLibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createLibraryButton.layer.cornerRadius = 15
+        addLandsButton.layer.cornerRadius = 15
+        
         cardBoxCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
         newLibraryCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
         

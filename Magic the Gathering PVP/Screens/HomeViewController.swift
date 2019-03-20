@@ -14,6 +14,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var usersName: UILabel!
     @IBOutlet weak var coinImage: UIImageView!
     @IBOutlet weak var numberOfCoins: UILabel!
+    @IBOutlet weak var collectionsButton: UIButton!
+    @IBOutlet weak var challengePlayerButton: UIButton!
+    @IBOutlet weak var chatRoomButton: UIButton!
+    @IBOutlet weak var magicShopButton: UIButton!
+    @IBOutlet weak var tutorialsButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     let userID = Auth.auth().currentUser?.uid
     var ref: DatabaseReference!
@@ -41,6 +47,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionsButton.layer.cornerRadius = 20
+        challengePlayerButton.layer.cornerRadius = 20
+        chatRoomButton.layer.cornerRadius = 20
+        magicShopButton.layer.cornerRadius = 20
+        tutorialsButton.layer.cornerRadius = 20
+        logoutButton.layer.cornerRadius = 15
         
         coinImage.layer.cornerRadius = 15
         

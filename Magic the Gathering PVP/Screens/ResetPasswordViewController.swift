@@ -19,7 +19,7 @@ class ResetPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resetPassword.layer.cornerRadius = 10
+        resetPassword.layer.cornerRadius = 15
     }
     
     @IBAction func resetPassword(_ sender: Any) {
