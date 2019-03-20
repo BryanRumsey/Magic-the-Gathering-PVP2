@@ -21,7 +21,29 @@ class alertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addToolBarToKeyboard()
+        
         [numForests, numIslands, numMountains, numPlains, numSwamp].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
+    }
+    
+    func addToolBarToKeyboard(){
+        //init toolbar
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        //create left side empty space so that done button set on right side
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(LoginViewController.doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        //setting toolbar as inputAccessoryView
+        self.numForests.inputAccessoryView = toolbar
+        self.numIslands.inputAccessoryView = toolbar
+        self.numMountains.inputAccessoryView = toolbar
+        self.numPlains.inputAccessoryView = toolbar
+        self.numSwamp.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
     }
     
     @objc func editingChanged(_ textField: UITextField){

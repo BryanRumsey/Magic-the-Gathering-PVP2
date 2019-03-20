@@ -27,7 +27,29 @@ class CreateAccountViewController: UIViewController {
         
         createAccountButton.layer.cornerRadius = 15
         
+        addToolBarToKeyboard()
+        
         ref = Database.database().reference()
+    }
+    
+    func addToolBarToKeyboard(){
+        //init toolbar
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        //create left side empty space so that done button set on right side
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(LoginViewController.doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        //setting toolbar as inputAccessoryView
+        self.firstName.inputAccessoryView = toolbar
+        self.lastName.inputAccessoryView = toolbar
+        self.username.inputAccessoryView = toolbar
+        self.password.inputAccessoryView = toolbar
+        self.password2.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
     }
     
     @IBAction func createAccount(_ sender: Any) {

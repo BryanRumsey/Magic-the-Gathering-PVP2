@@ -132,13 +132,19 @@ extension magicShopViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if names[indexPath.row] == "Additional Library" {
+        if coins < costs[indexPath.row] {
+            let alert = UIAlertController(title: "Insufficient Coins", message: "You don't have enough coins to make this purchase.", preferredStyle: UIAlertController.Style.alert)
+            let cancel = UIAlertAction(title: "Close", style: .default) { (alertAction) in }
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+        } else if names[indexPath.row] == "Additional Library" {
             let alert = UIAlertController(title: names[indexPath.row], message: descriptions[indexPath.row], preferredStyle: UIAlertController.Style.alert)
             let action = UIAlertAction(title: "Purchase", style: .default) { (alertAction) in
                 self.coins = self.coins - self.costs[indexPath.row]
+                self.libraryLimit = self.libraryLimit + 1
                 let userRef = self.ref.child("users/\(self.userID)")
                 userRef.child("coins").setValue(self.coins)
-                userRef.child("libraryLimit").setValue((self.libraryLimit + 1))
+                userRef.child("libraryLimit").setValue(self.libraryLimit)
             }
             let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) in }
             alert.addAction(action)
@@ -148,9 +154,10 @@ extension magicShopViewController: UICollectionViewDataSource, UICollectionViewD
             let alert = UIAlertController(title: names[indexPath.row], message: descriptions[indexPath.row], preferredStyle: UIAlertController.Style.alert)
             let action = UIAlertAction(title: "Purchase", style: .default) { (alertAction) in
                 self.coins = self.coins - self.costs[indexPath.row]
+                self.cardBoxLimit = self.cardBoxLimit + 10
                 let userRef = self.ref.child("users/\(self.userID)")
                 userRef.child("coins").setValue(self.coins)
-                userRef.child("cardBoxLimit").setValue((self.cardBoxLimit + 10))
+                userRef.child("cardBoxLimit").setValue(self.cardBoxLimit)
             }
             let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) in }
             alert.addAction(action)
