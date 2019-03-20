@@ -1556,7 +1556,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA4-OG-wCn">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA4-OG-wCn">
                                 <rect key="frame" x="145" y="533" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7r2-9F-oeE"/>
@@ -1640,6 +1640,7 @@
                         <viewLayoutGuide key="safeArea" id="M1M-OM-nQJ"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="VA4-OG-wCn" id="yic-8N-Cmy"/>
                         <outlet property="cardCollectionView" destination="Xvj-rQ-ADL" id="lfK-fc-7cQ"/>
                         <outlet property="cardLibraryView" destination="uAx-ph-3Ip" id="x1g-R8-QN5"/>
                         <outlet property="collectionName" destination="vXQ-VE-Eo0" id="LzS-DH-lDs"/>
@@ -1797,7 +1798,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-k6-jnp">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-k6-jnp">
                                 <rect key="frame" x="145" y="533" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="rmP-9M-20F"/>
@@ -1857,6 +1858,7 @@
                     </view>
                     <connections>
                         <outlet property="addLandsButton" destination="Dkq-lj-9YW" id="ASJ-eI-WPT"/>
+                        <outlet property="cancelButton" destination="GvK-k6-jnp" id="408-Zh-KLD"/>
                         <outlet property="cardBoxCollectionView" destination="Qsx-9f-eFV" id="4kJ-cx-kHm"/>
                         <outlet property="createLibraryButton" destination="O6s-0b-EyM" id="s6X-Dg-znh"/>
                         <outlet property="libraryName" destination="pL4-lt-j2t" id="HO0-Ma-4kr"/>
@@ -1875,8 +1877,9 @@
         <image name="coin" width="224" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wNA-WY-A22"/>
         <segue reference="aEc-G5-nnh"/>
-        <segue reference="EGM-aN-ph6"/>
+        <segue reference="uE6-E8-z5S"/>
         <segue reference="DKo-PC-n9o"/>
     </inferredMetricsTieBreakers>
 </document>

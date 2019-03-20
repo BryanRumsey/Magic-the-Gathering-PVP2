@@ -21,22 +21,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Magic_Card_Back" translatesAutoresizingMaskIntoConstraints="NO" id="4dd-5H-SNp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Y0-S8-bVO">
-                                <rect key="frame" x="66" y="587" width="243" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="3ur-Pf-2c9"/>
-                                </constraints>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4dd-5H-SNp" secondAttribute="trailing" id="Lm8-Dc-GzB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8Y0-S8-bVO" secondAttribute="trailing" constant="50" id="Mxc-zd-Wyt"/>
                             <constraint firstItem="4dd-5H-SNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O8k-kh-Ymx"/>
-                            <constraint firstItem="8Y0-S8-bVO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="50" id="QgX-J9-l3q"/>
                             <constraint firstItem="4dd-5H-SNp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="QnV-76-HRA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4dd-5H-SNp" secondAttribute="bottom" id="kbN-eg-O1X"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Y0-S8-bVO" secondAttribute="bottom" constant="70" id="otR-8P-DS7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

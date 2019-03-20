@@ -15,6 +15,7 @@ class CardCollectionViewController: UIViewController {
     @IBOutlet weak var cardLibraryView: UICollectionView!
     @IBOutlet weak var editLibraryButton: UIButton!
     @IBOutlet weak var deleteLibraryButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var collectionName: UILabel!
     
@@ -38,6 +39,7 @@ class CardCollectionViewController: UIViewController {
     var cardNamesArray: [String] = []
     
     var cardBoxLimit: Int = 0
+    var libraryLimit: Int = 0
     
     var postHandle1: DatabaseHandle!
     var postHandle2: DatabaseHandle!
@@ -47,6 +49,7 @@ class CardCollectionViewController: UIViewController {
         
         editLibraryButton.layer.cornerRadius = 15
         deleteLibraryButton.layer.cornerRadius = 15
+        cancelButton.layer.cornerRadius = 5
         
         cardCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
         cardLibraryView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
@@ -56,6 +59,8 @@ class CardCollectionViewController: UIViewController {
         
         displayCollections()
         
+        getCardBoxLimit()
+        getLibraryLimit()
         
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
@@ -94,6 +99,13 @@ class CardCollectionViewController: UIViewController {
         let cblRef = ref.child("users/\(userID)/cardBoxLimit")
         cblRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.cardBoxLimit = snapshot.value as! Int
+        })
+    }
+    
+    func getLibraryLimit() {
+        let llRef = ref.child("users/\(userID)/libraryLimit")
+        llRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.libraryLimit = snapshot.value as! Int
         })
     }
     
@@ -262,16 +274,21 @@ extension CardCollectionViewController: UICollectionViewDataSource, UICollection
                         self.cardNamesArray.append("addCard")
                     }
                 }
-            }else{
+            }else if (displayArray1.count - 2 < libraryLimit){
                 self.collectionName.text = ""
                 self.performSegue(withIdentifier: "createLibrary", sender: self)
+            } else {
+                let alert = UIAlertController(title: "Library Limit Reached", message: "You have reached the maximum number of Libraries that you can build.  If you wish to build another Library you can delete a Library or you may purchase an additional Library from the Magic Shop.", preferredStyle: UIAlertController.Style.alert)
+                let cancel = UIAlertAction(title: "Close", style: .default) { (alertAction) in }
+                alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
             }
         } else {
             if cardNamesArray[indexPath.row] == "addCard"{
                 if displayArray2.count - 1 < cardBoxLimit {
                     addCardToCardBox()
                 } else {
-                    let alert = UIAlertController(title: "Card Box Limit Reached", message: "You have reached the maximum number of card that your Card Box can hold.  If you wish to add another card you can remove cards from your Card Box or you may purchase a Card Box Expansion.", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Card Box Limit Reached", message: "You have reached the maximum number of cards that your Card Box can hold.  If you wish to add another card you can remove cards from your Card Box or you may purchase a Card Box Expansion from the Magic Shop.", preferredStyle: UIAlertController.Style.alert)
                     let cancel = UIAlertAction(title: "Close", style: .default) { (alertAction) in }
                     alert.addAction(cancel)
                     self.present(alert, animated: true, completion: nil)

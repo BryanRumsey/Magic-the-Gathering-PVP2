@@ -17,6 +17,7 @@ class buildLibraryViewController: UIViewController {
     @IBOutlet weak var libraryName: UILabel!
     @IBOutlet weak var createLibraryButton: UIButton!
     @IBOutlet weak var addLandsButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var displayArray2Count: Int = 0 {
         didSet {
@@ -58,6 +59,7 @@ class buildLibraryViewController: UIViewController {
         
         createLibraryButton.layer.cornerRadius = 15
         addLandsButton.layer.cornerRadius = 15
+        cancelButton.layer.cornerRadius = 5
         
         cardBoxCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
         newLibraryCollectionView.backgroundView = UIImageView(image: UIImage(named: "background.png"))

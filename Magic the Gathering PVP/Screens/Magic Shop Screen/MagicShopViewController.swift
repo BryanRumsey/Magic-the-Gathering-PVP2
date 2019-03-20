@@ -49,6 +49,11 @@ class magicShopViewController: UIViewController {
         
         ref = Database.database().reference()
         
+        if let flowLayout = shopItemCollectionView.collectionViewLayout as? UICollectionViewFlowLayout, let collectionView = shopItemCollectionView {
+            let width = view.frame.width / 2 - 5
+            flowLayout.estimatedItemSize = CGSize(width: width, height: 200)
+        }
+        
         coinImage.layer.cornerRadius = 15
         getUsersCoins()
         getLibraryLimit()
