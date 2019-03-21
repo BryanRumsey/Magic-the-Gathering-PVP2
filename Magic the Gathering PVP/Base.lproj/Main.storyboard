@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="10" width="320" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Pg1-1B-Tsn"/>
-                                    <constraint firstAttribute="width" constant="320" id="oxe-mV-3wa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="oxe-mV-3wa"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Login">
@@ -51,7 +51,7 @@
                                 <rect key="frame" x="32.5" y="145" width="255" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Gn7-Md-lnF"/>
-                                    <constraint firstAttribute="width" constant="255" id="QGY-qk-6rc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="QGY-qk-6rc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,7 +60,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pso-Q5-Hkl">
                                 <rect key="frame" x="22.5" y="175" width="275" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="0ht-UV-d1Q"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="0ht-UV-d1Q"/>
                                     <constraint firstAttribute="height" constant="30" id="Qgz-8c-3Kn"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
@@ -69,7 +69,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVU-3w-8nL">
                                 <rect key="frame" x="47.5" y="205" width="225" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="l3m-sx-DRH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="l3m-sx-DRH"/>
                                     <constraint firstAttribute="height" constant="12" id="sxJ-hr-Opk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="32.5" y="230" width="255" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1px-1Y-XVS"/>
-                                    <constraint firstAttribute="width" constant="255" id="paZ-Po-3rq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="paZ-Po-3rq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,7 +90,7 @@
                                 <rect key="frame" x="22.5" y="260" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5dH-cj-Bco"/>
-                                    <constraint firstAttribute="width" constant="275" id="6LY-0V-EwR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="6LY-0V-EwR"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
@@ -98,7 +98,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyE-ay-tVu">
                                 <rect key="frame" x="47.5" y="290" width="225" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="3U4-mH-31r"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="3U4-mH-31r"/>
                                     <constraint firstAttribute="height" constant="15" id="op2-Au-8Pu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
@@ -242,7 +242,7 @@
                                 <rect key="frame" x="0.0" y="10" width="320" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="My8-6A-ySF"/>
-                                    <constraint firstAttribute="width" constant="320" id="RK2-DH-TpN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="RK2-DH-TpN"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Home">
@@ -373,7 +373,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVG-5I-sOc">
                                 <rect key="frame" x="68" y="508" width="60" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Cs4-Ip-Zvj"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Cs4-Ip-Zvj"/>
                                     <constraint firstAttribute="height" constant="30" id="S4W-Sj-Oye"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -448,6 +448,7 @@
                             <constraint firstItem="ZXv-ct-ibx" firstAttribute="bottom" secondItem="n3q-eV-us3" secondAttribute="bottom" constant="30" id="XHt-qY-cWv"/>
                             <constraint firstItem="xub-PR-hIQ" firstAttribute="top" secondItem="eFR-HX-FA9" secondAttribute="bottom" constant="16" id="YHE-xD-twb"/>
                             <constraint firstItem="ZXv-ct-ibx" firstAttribute="bottom" secondItem="BVG-5I-sOc" secondAttribute="bottom" constant="30" id="ZgL-yo-59e"/>
+                            <constraint firstItem="dEd-g4-NKP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BVG-5I-sOc" secondAttribute="trailing" constant="8" symbolic="YES" id="ajC-xS-6ck"/>
                             <constraint firstItem="UF3-Mb-uzE" firstAttribute="centerX" secondItem="xub-PR-hIQ" secondAttribute="centerX" id="bQW-E8-FdY"/>
                             <constraint firstItem="ZXv-ct-ibx" firstAttribute="bottom" secondItem="dEd-g4-NKP" secondAttribute="bottom" constant="30" id="eOb-st-pMD"/>
                             <constraint firstItem="eUq-ZV-Rbs" firstAttribute="centerX" secondItem="H4C-Mf-Wpd" secondAttribute="centerX" id="fts-tr-fLy"/>
@@ -501,7 +502,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAf-xW-etY">
                                 <rect key="frame" x="0.0" y="10" width="320" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="1J6-iZ-4d4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="1J6-iZ-4d4"/>
                                     <constraint firstAttribute="height" constant="75" id="tjD-rP-mQw"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -520,7 +521,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9e-BH-3Nz">
                                 <rect key="frame" x="32.5" y="145" width="255" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="Hq5-oY-ccO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="Hq5-oY-ccO"/>
                                     <constraint firstAttribute="height" constant="30" id="Y5D-Ui-PJe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -531,7 +532,7 @@
                                 <rect key="frame" x="22.5" y="175" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="V9r-lH-kAl"/>
-                                    <constraint firstAttribute="width" constant="275" id="mwy-Ni-7I0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="mwy-Ni-7I0"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="given-name"/>
@@ -539,7 +540,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiS-Y9-QCj">
                                 <rect key="frame" x="32.5" y="215" width="255" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="Tzj-os-skW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="Tzj-os-skW"/>
                                     <constraint firstAttribute="height" constant="30" id="x0Q-6s-YhX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -549,7 +550,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your last name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TkQ-1x-ClN">
                                 <rect key="frame" x="22.5" y="245" width="275" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="SIJ-eP-4qc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="SIJ-eP-4qc"/>
                                     <constraint firstAttribute="height" constant="30" id="wug-wy-w3F"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
@@ -559,7 +560,7 @@
                                 <rect key="frame" x="32.5" y="285" width="255" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Nfq-9O-qHq"/>
-                                    <constraint firstAttribute="width" constant="255" id="UR4-T8-q3U"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="UR4-T8-q3U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -569,7 +570,7 @@
                                 <rect key="frame" x="22.5" y="315" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5ke-LI-UcV"/>
-                                    <constraint firstAttribute="width" constant="275" id="ihV-pZ-T39"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="ihV-pZ-T39"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
@@ -577,7 +578,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-O5-f09">
                                 <rect key="frame" x="47.5" y="345" width="225" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="0a5-qX-KXK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="0a5-qX-KXK"/>
                                     <constraint firstAttribute="height" constant="15" id="jvp-pg-u2Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
@@ -588,7 +589,7 @@
                                 <rect key="frame" x="32.5" y="370" width="255" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gEd-XN-pHb"/>
-                                    <constraint firstAttribute="width" constant="255" id="vK1-tO-Q7V"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="vK1-tO-Q7V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -597,7 +598,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AUW-Zw-6XD">
                                 <rect key="frame" x="22.5" y="400" width="275" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="Csk-eA-fWt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="Csk-eA-fWt"/>
                                     <constraint firstAttribute="height" constant="30" id="Jdb-tM-eg4"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
@@ -606,7 +607,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-Enter Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6m-ek-VZS">
                                 <rect key="frame" x="32.5" y="440" width="255" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="erd-RA-7ha"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="erd-RA-7ha"/>
                                     <constraint firstAttribute="height" constant="30" id="qaf-xp-cX5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -616,7 +617,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Re-enter your password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dwr-WY-dWg">
                                 <rect key="frame" x="22.5" y="470" width="275" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="Ire-bC-TCO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="Ire-bC-TCO"/>
                                     <constraint firstAttribute="height" constant="30" id="p99-Iu-D14"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
@@ -625,7 +626,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua8-B9-jDT">
                                 <rect key="frame" x="37.5" y="500" width="245" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="245" id="qWS-bn-eDb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="qWS-bn-eDb"/>
                                     <constraint firstAttribute="height" constant="15" id="xoj-z1-HgF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
@@ -755,7 +756,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlM-Sc-7Km">
                                 <rect key="frame" x="0.0" y="10" width="320" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="5ya-bC-QHT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="5ya-bC-QHT"/>
                                     <constraint firstAttribute="height" constant="75" id="B4R-BB-TDt"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -774,7 +775,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njc-me-Y68">
                                 <rect key="frame" x="32.5" y="145" width="255" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="72r-88-cBu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="72r-88-cBu"/>
                                     <constraint firstAttribute="height" constant="30" id="k8P-Ht-DA8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -784,7 +785,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-cG-LL3">
                                 <rect key="frame" x="22.5" y="175" width="275" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="Jd2-j7-psM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="Jd2-j7-psM"/>
                                     <constraint firstAttribute="height" constant="30" id="kgg-Ei-d7G"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
@@ -794,7 +795,7 @@
                                 <rect key="frame" x="47.5" y="205" width="225" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="BlW-Rg-w2F"/>
-                                    <constraint firstAttribute="width" constant="225" id="yOl-Xz-l8z"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="yOl-Xz-l8z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -847,7 +848,7 @@
                                 <rect key="frame" x="72.5" y="270" width="175" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="mfb-OT-45P"/>
-                                    <constraint firstAttribute="width" constant="175" id="zES-xe-vHQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="zES-xe-vHQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -949,7 +950,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDI-TQ-M3v">
                                 <rect key="frame" x="0.0" y="10" width="320" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="dt7-9u-t3L"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="dt7-9u-t3L"/>
                                     <constraint firstAttribute="height" constant="75" id="f2g-69-8df"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -1012,7 +1013,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wz9-51-v8Z">
                                 <rect key="frame" x="109" y="481" width="200" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0Gu-RB-Wei"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0Gu-RB-Wei"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1036,10 +1037,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-nZ-B1P">
-                                                    <rect key="frame" x="5" y="0.0" width="90" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-nZ-B1P">
+                                                    <rect key="frame" x="5" y="0.0" width="90" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="5fu-TN-5ax"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="5fu-TN-5ax"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Chat Handle">
@@ -1052,10 +1053,10 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="maj-4k-dcq">
-                                                    <rect key="frame" x="93" y="-1" width="230" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="maj-4k-dcq">
+                                                    <rect key="frame" x="93" y="-1" width="230" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="230" id="gMe-dV-eyW"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="gMe-dV-eyW"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Message">
@@ -1071,9 +1072,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="maj-4k-dcq" secondAttribute="trailing" constant="-3" id="3TK-be-5LC"/>
+                                                <constraint firstItem="maj-4k-dcq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ojU-2h-kb6" secondAttribute="leading" constant="20" symbolic="YES" id="RQQ-ZD-nLt"/>
                                                 <constraint firstItem="Ow9-nZ-B1P" firstAttribute="leading" secondItem="ojU-2h-kb6" secondAttribute="leading" constant="5" id="j9L-hF-Cke"/>
                                                 <constraint firstItem="maj-4k-dcq" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" constant="-1" id="ndL-gC-DDj"/>
                                                 <constraint firstItem="Ow9-nZ-B1P" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" id="tGW-iA-VsB"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ow9-nZ-B1P" secondAttribute="trailing" constant="20" symbolic="YES" id="zph-Jm-7h6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1089,6 +1092,7 @@
                         <constraints>
                             <constraint firstItem="foC-CI-AUb" firstAttribute="leading" secondItem="LwJ-V8-VkC" secondAttribute="leading" constant="16" id="0wg-zg-s9r"/>
                             <constraint firstItem="LwJ-V8-VkC" firstAttribute="bottom" secondItem="DBe-Oa-B13" secondAttribute="bottom" constant="16" id="DDV-ro-DZM"/>
+                            <constraint firstItem="Wz9-51-v8Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="foC-CI-AUb" secondAttribute="trailing" constant="8" symbolic="YES" id="Iba-hk-EHf"/>
                             <constraint firstItem="LwJ-V8-VkC" firstAttribute="top" secondItem="0cn-4W-Aj9" secondAttribute="top" constant="20" id="M5M-SN-gwr"/>
                             <constraint firstItem="0cn-4W-Aj9" firstAttribute="leading" secondItem="LwJ-V8-VkC" secondAttribute="leading" id="Mm8-xg-j8v"/>
                             <constraint firstItem="DBe-Oa-B13" firstAttribute="leading" secondItem="LwJ-V8-VkC" secondAttribute="leading" constant="16" id="OQO-1v-d1p"/>
@@ -1135,7 +1139,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEK-hq-uEF">
                                 <rect key="frame" x="0.0" y="10" width="320" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="YXc-FW-ynb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="YXc-FW-ynb"/>
                                     <constraint firstAttribute="height" constant="75" id="wvh-A0-whh"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -1263,7 +1267,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slD-hm-MLp">
                                 <rect key="frame" x="0.0" y="10" width="320" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Rcu-3s-fYB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Rcu-3s-fYB"/>
                                     <constraint firstAttribute="height" constant="75" id="WTX-RZ-RSz"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -1293,7 +1297,7 @@
                                         <rect key="frame" x="38" y="0.0" width="60" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="No2-Cb-7KW"/>
-                                            <constraint firstAttribute="width" constant="60" id="kFU-em-9ZQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="kFU-em-9ZQ"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
@@ -1333,9 +1337,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7Y-Yw-4bh">
-                                                    <rect key="frame" x="7.5" y="102" width="140" height="20"/>
+                                                    <rect key="frame" x="38.5" y="102" width="78.5" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="140" id="Pfl-cj-aTt"/>
                                                         <constraint firstAttribute="height" constant="20" id="z3U-Lc-1mR"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
@@ -1350,12 +1353,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-Gk-7n9">
-                                                    <rect key="frame" x="53" y="126" width="49" height="20"/>
+                                                    <rect key="frame" x="48.5" y="126" width="58" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hii-SX-c5H">
-                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="29" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="jjZ-vS-ZZu"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="jjZ-vS-ZZu"/>
                                                                 <constraint firstAttribute="height" constant="20" id="zxq-nw-2Xz"/>
                                                             </constraints>
                                                             <attributedString key="attributedText">
@@ -1370,7 +1373,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="1IA-l5-ptx">
-                                                            <rect key="frame" x="29" y="0.0" width="20" height="20"/>
+                                                            <rect key="frame" x="38" y="0.0" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="Hrp-ox-bY2"/>
                                                                 <constraint firstAttribute="height" constant="20" id="pcw-HG-zAP"/>
@@ -1465,7 +1468,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz3-No-RNX">
                                 <rect key="frame" x="16" y="20" width="288" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="rFc-3g-FhG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="rFc-3g-FhG"/>
                                     <constraint firstAttribute="height" constant="34" id="zUx-6l-Cdk"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -1483,7 +1486,7 @@
                                 <rect key="frame" x="16" y="274" width="288" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Eza-fv-Apg"/>
-                                    <constraint firstAttribute="width" constant="288" id="T8g-Ks-Dmb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="T8g-Ks-Dmb"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1704,7 +1707,7 @@
                                 <rect key="frame" x="16" y="20" width="288" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="9c6-Ip-WcM"/>
-                                    <constraint firstAttribute="width" constant="288" id="mqU-oy-cOe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="mqU-oy-cOe"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Card Box">
@@ -1892,7 +1895,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aEc-G5-nnh"/>
-        <segue reference="EGM-aN-ph6"/>
-        <segue reference="DKo-PC-n9o"/>
+        <segue reference="uE6-E8-z5S"/>
+        <segue reference="mFm-wR-ahH"/>
     </inferredMetricsTieBreakers>
 </document>
