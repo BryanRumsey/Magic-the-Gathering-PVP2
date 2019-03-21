@@ -44,6 +44,11 @@ class chatRoomViewController: UIViewController {
         
         chatRoomTableView.delegate = self
         chatRoomTableView.dataSource = self
+        
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: message, queue: OperationQueue.main) { (notification) -> Void in
+            let textField = self.message as UITextField
+            self.postMessageButton.isEnabled = !textField.text!.isEmpty
+        }
     }
     
     func addToolBarToKeyboard(){
@@ -93,6 +98,7 @@ class chatRoomViewController: UIViewController {
         
         self.ref.child("chatRoom").updateChildValues([chatHandle:message.text!])
         message.text = ""
+        postMessageButton.isEnabled = false
     }
     
 }

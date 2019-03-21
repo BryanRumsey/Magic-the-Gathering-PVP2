@@ -986,7 +986,7 @@
                                             <segue destination="ucp-oj-eXp" kind="showDetail" id="EGM-aN-ph6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dtd-Ua-GDk">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dtd-Ua-GDk">
                                         <rect key="frame" x="156.5" y="0.0" width="131.5" height="30"/>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal">
@@ -1036,30 +1036,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Handle" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-nZ-B1P">
-                                                    <rect key="frame" x="5" y="5" width="90" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-nZ-B1P">
+                                                    <rect key="frame" x="5" y="0.0" width="90" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="5fu-TN-5ax"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Chat Handle">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="16" name="ChalkboardSE-Light"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="maj-4k-dcq">
-                                                    <rect key="frame" x="93" y="5" width="230" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="maj-4k-dcq">
+                                                    <rect key="frame" x="93" y="-1" width="230" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="230" id="gMe-dV-eyW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Message">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="16" name="ChalkboardSE-Light"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="maj-4k-dcq" secondAttribute="trailing" constant="-3" id="3TK-be-5LC"/>
                                                 <constraint firstItem="Ow9-nZ-B1P" firstAttribute="leading" secondItem="ojU-2h-kb6" secondAttribute="leading" constant="5" id="j9L-hF-Cke"/>
-                                                <constraint firstItem="maj-4k-dcq" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" constant="5" id="ndL-gC-DDj"/>
-                                                <constraint firstItem="Ow9-nZ-B1P" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" constant="5" id="tGW-iA-VsB"/>
+                                                <constraint firstItem="maj-4k-dcq" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" constant="-1" id="ndL-gC-DDj"/>
+                                                <constraint firstItem="Ow9-nZ-B1P" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" id="tGW-iA-VsB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1877,9 +1891,8 @@
         <image name="coin" width="224" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wNA-WY-A22"/>
         <segue reference="aEc-G5-nnh"/>
-        <segue reference="uE6-E8-z5S"/>
+        <segue reference="EGM-aN-ph6"/>
         <segue reference="DKo-PC-n9o"/>
     </inferredMetricsTieBreakers>
 </document>

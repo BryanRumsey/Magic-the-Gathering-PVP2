@@ -39,6 +39,7 @@ class CardCollectionViewController: UIViewController {
     var cardNamesArray: [String] = []
     
     var cardBoxLimit: Int = 0
+    var cardBoxCount: Int = 0
     var libraryLimit: Int = 0
     
     var postHandle1: DatabaseHandle!
@@ -60,6 +61,7 @@ class CardCollectionViewController: UIViewController {
         displayCollections()
         
         getCardBoxLimit()
+        getCardBoxCount()
         getLibraryLimit()
         
         cardCollectionView.delegate = self
@@ -99,6 +101,13 @@ class CardCollectionViewController: UIViewController {
         let cblRef = ref.child("users/\(userID)/cardBoxLimit")
         cblRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.cardBoxLimit = snapshot.value as! Int
+        })
+    }
+    
+    func getCardBoxCount(){
+        let cbcRef = ref.child("users/\(userID)/cardBoxCount")
+        cbcRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.cardBoxCount = snapshot.value as! Int
         })
     }
     
@@ -285,7 +294,7 @@ extension CardCollectionViewController: UICollectionViewDataSource, UICollection
             }
         } else {
             if cardNamesArray[indexPath.row] == "addCard"{
-                if displayArray2.count - 1 < cardBoxLimit {
+                if cardBoxCount < cardBoxLimit {
                     addCardToCardBox()
                 } else {
                     let alert = UIAlertController(title: "Card Box Limit Reached", message: "You have reached the maximum number of cards that your Card Box can hold.  If you wish to add another card you can remove cards from your Card Box or you may purchase a Card Box Expansion from the Magic Shop.", preferredStyle: UIAlertController.Style.alert)
@@ -293,7 +302,15 @@ extension CardCollectionViewController: UICollectionViewDataSource, UICollection
                     alert.addAction(cancel)
                     self.present(alert, animated: true, completion: nil)
                 }
-                
+            } else if(self.collectionName.text == "Card Box") {
+                let alert = UIAlertController(title: "Remove Card", message: "Are you sure you would like to remove this card?", preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "Remove", style: .default) { (alertAction) in
+                    
+                }
+                let cancel = UIAlertAction(title: "cancel", style: .default) { (alertAction) in }
+                alert.addAction(action)
+                alert.addAction(cancel)
+                present(alert, animated: true, completion: nil)
             }
         }
     }

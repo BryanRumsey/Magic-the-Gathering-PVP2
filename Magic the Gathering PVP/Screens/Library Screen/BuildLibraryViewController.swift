@@ -188,8 +188,7 @@ class buildLibraryViewController: UIViewController {
             }
         }
         action.isEnabled = false
-        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object:alert.textFields?[0],
-                                               queue: OperationQueue.main) { (notification) -> Void in
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object:alert.textFields?[0], queue: OperationQueue.main) { (notification) -> Void in
             let textField = alert.textFields![0] as UITextField
             action.isEnabled = !textField.text!.isEmpty
         }
