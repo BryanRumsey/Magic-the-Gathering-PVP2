@@ -321,7 +321,7 @@ class buildLibraryViewController: UIViewController {
     }
     
     func addLandsToLibrary(numLands: Int, landName: String){
-        let libRef = self.ref.child("users/\(self.userID)/collection/\(self.libraryName.text!)/cards")
+        let libRef = self.ref.child("users/\(self.userID)/collection/\(self.libraryName.text!)/basicLands")
         let landRef = ref.child("cards/\(landName)")
         landRef.observeSingleEvent(of: .value, with: { (snapshot) in
             for _ in 0..<numLands {
