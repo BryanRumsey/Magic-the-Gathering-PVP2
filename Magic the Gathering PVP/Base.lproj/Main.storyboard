@@ -1011,7 +1011,7 @@
                                 </constraints>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wz9-51-v8Z">
-                                <rect key="frame" x="109" y="481" width="200" height="30"/>
+                                <rect key="frame" x="109" y="482" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0Gu-RB-Wei"/>
                                 </constraints>
@@ -1020,13 +1020,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chatName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foC-CI-AUb">
-                                <rect key="frame" x="16" y="485.5" width="79" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="488" width="70.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-HQ-HF4">
-                                <rect key="frame" x="0.0" y="135" width="320" height="338"/>
+                                <rect key="frame" x="0.0" y="135" width="320" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <prototypes>
@@ -1038,15 +1038,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-nZ-B1P">
-                                                    <rect key="frame" x="5" y="0.0" width="90" height="23"/>
+                                                    <rect key="frame" x="5" y="0.0" width="90" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="5fu-TN-5ax"/>
+                                                        <constraint firstAttribute="width" constant="90" id="5fu-TN-5ax"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Chat Handle">
                                                             <attributes>
                                                                 <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <font key="NSFont" size="16" name="ChalkboardSE-Light"/>
+                                                                <font key="NSFont" size="14" name="ChalkboardSE-Light"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -1054,9 +1054,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="maj-4k-dcq">
-                                                    <rect key="frame" x="93" y="-1" width="230" height="23"/>
+                                                    <rect key="frame" x="100" y="-1" width="220" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="gMe-dV-eyW"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="gMe-dV-eyW"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Message">
@@ -1071,10 +1071,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="maj-4k-dcq" secondAttribute="trailing" constant="-3" id="3TK-be-5LC"/>
-                                                <constraint firstItem="maj-4k-dcq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ojU-2h-kb6" secondAttribute="leading" constant="20" symbolic="YES" id="RQQ-ZD-nLt"/>
+                                                <constraint firstAttribute="trailing" secondItem="maj-4k-dcq" secondAttribute="trailing" id="3TK-be-5LC"/>
                                                 <constraint firstItem="Ow9-nZ-B1P" firstAttribute="leading" secondItem="ojU-2h-kb6" secondAttribute="leading" constant="5" id="j9L-hF-Cke"/>
                                                 <constraint firstItem="maj-4k-dcq" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" constant="-1" id="ndL-gC-DDj"/>
+                                                <constraint firstItem="maj-4k-dcq" firstAttribute="leading" secondItem="Ow9-nZ-B1P" secondAttribute="trailing" constant="5" id="owa-sL-jDg"/>
                                                 <constraint firstItem="Ow9-nZ-B1P" firstAttribute="top" secondItem="ojU-2h-kb6" secondAttribute="top" id="tGW-iA-VsB"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ow9-nZ-B1P" secondAttribute="trailing" constant="20" symbolic="YES" id="zph-Jm-7h6"/>
                                             </constraints>
@@ -1895,7 +1895,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aEc-G5-nnh"/>
-        <segue reference="uE6-E8-z5S"/>
+        <segue reference="EGM-aN-ph6"/>
         <segue reference="mFm-wR-ahH"/>
     </inferredMetricsTieBreakers>
 </document>
