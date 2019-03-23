@@ -233,6 +233,8 @@ class CardCollectionViewController: UIViewController {
         dataRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.hasChildren() {
                 cardBoxRef.childByAutoId().setValue(snapshot.value)
+                self.cardBoxCount = self.cardBoxCount + 1
+                self.ref.child("users/\(self.userID)/cardBoxCount").setValue(self.cardBoxCount)
                 let data = snapshot.value! as Any
                 print(data)
             } else {
@@ -246,6 +248,18 @@ class CardCollectionViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         })
+    }
+    
+    func deleteCardBoxCard(index: Int){
+        self.ref.child("users/\(self.userID)/collection/Card Box/cards/\(self.cardKeysArray[index])").removeValue()
+        self.cardKeysArray.remove(at: index)
+        self.cardNamesArray.remove(at: index)
+        self.displayArray2.remove(at: index)
+        self.cardBoxCount = self.cardBoxCount - 1
+        self.ref.child("users/\(self.userID)/cardBoxCount").setValue(self.cardBoxCount)
+        if(self.cardBoxCount == 0) {
+            self.ref.child("users/\(self.userID)/collection/Card Box").child("cards").setValue("empty")
+        }
     }
 }
 
@@ -305,7 +319,7 @@ extension CardCollectionViewController: UICollectionViewDataSource, UICollection
             } else if(self.collectionName.text == "Card Box") {
                 let alert = UIAlertController(title: "Remove Card", message: "Are you sure you would like to remove this card?", preferredStyle: UIAlertController.Style.alert)
                 let action = UIAlertAction(title: "Remove", style: .default) { (alertAction) in
-                    
+                    self.deleteCardBoxCard(index: indexPath.row)
                 }
                 let cancel = UIAlertAction(title: "cancel", style: .default) { (alertAction) in }
                 alert.addAction(action)

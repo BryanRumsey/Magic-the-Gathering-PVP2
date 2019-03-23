@@ -16,6 +16,7 @@ Magic the Gathering PVP
 			  will run on any of the standard simulators
 4.) Click the run button at the top of Xcode to build and run the apllication.
 5.) You can use the video tutorials to test each component of the app.
+6.) cardList.txt contains a list of all of the cards that are currently in the database.
 
 
 
