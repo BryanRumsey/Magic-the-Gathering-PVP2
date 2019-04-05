@@ -98,21 +98,21 @@ class CardCollectionViewController: UIViewController {
     }
     
     func getCardBoxLimit(){
-        let cblRef = ref.child("users/\(userID)/cardBoxLimit")
+        let cblRef = ref.child("users/\(userID)/collection/Card Box/cardBoxLimit")
         cblRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.cardBoxLimit = snapshot.value as! Int
         })
     }
     
     func getCardBoxCount(){
-        let cbcRef = ref.child("users/\(userID)/cardBoxCount")
+        let cbcRef = ref.child("users/\(userID)/collection/Card Box/cardBoxCount")
         cbcRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.cardBoxCount = snapshot.value as! Int
         })
     }
     
     func getLibraryLimit() {
-        let llRef = ref.child("users/\(userID)/libraryLimit")
+        let llRef = ref.child("users/\(userID)/collection/libraryLimit")
         llRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.libraryLimit = snapshot.value as! Int
         })
@@ -231,10 +231,10 @@ class CardCollectionViewController: UIViewController {
         let dataRef = ref.child("cards/\(name)")
         let cardBoxRef = ref.child("users/\(userID)/collection/Card Box/cards")
         dataRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if snapshot.hasChildren() {
+            if snapshot.hasChildren() && (name != "basicLands" || name != "tokens"){
                 cardBoxRef.childByAutoId().setValue(snapshot.value)
                 self.cardBoxCount = self.cardBoxCount + 1
-                self.ref.child("users/\(self.userID)/cardBoxCount").setValue(self.cardBoxCount)
+                self.ref.child("users/\(self.userID)/collection/Card Box/cardBoxCount").setValue(self.cardBoxCount)
                 let data = snapshot.value! as Any
                 print(data)
             } else {
@@ -256,7 +256,7 @@ class CardCollectionViewController: UIViewController {
         self.cardNamesArray.remove(at: index)
         self.displayArray2.remove(at: index)
         self.cardBoxCount = self.cardBoxCount - 1
-        self.ref.child("users/\(self.userID)/cardBoxCount").setValue(self.cardBoxCount)
+        self.ref.child("users/\(self.userID)/collection/Card Box/cardBoxCount").setValue(self.cardBoxCount)
         if(self.cardBoxCount == 0) {
             self.ref.child("users/\(self.userID)/collection/Card Box").child("cards").setValue("empty")
         }

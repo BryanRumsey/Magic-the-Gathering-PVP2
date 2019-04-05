@@ -1,48 +1,313 @@
+
+
 Aegis of the Heavens
+
+Aether Tunnel
 Aethershield Artificer
+
+Air Elemental
 Ajani's Influence
 Ajani's Last Stand
 Ajani's Pridemate
 Ajani's Welcome
 Ajani, Adversary of Tyrants
 Ajani, Wise Counselor
+
+
 Angel of the Dawn
+
+Anticipate
+
+
+
+
+
+Aven Wind Mage
+Aviation Pioneer
+
+
+
+Befuddle
+
+
+
+
+
+Bone to Ash
+
+
+Cancel
+
+
 Cavalry Drillmaster
+
+
+
+
+
+
 Cleansing Nova
+
+
 Court Cleric
+
+
+
+
 Daybreak Chaplain
+
+
+
+
+Departed Deckhand
+
+
+
+
+
+Disperse
+Divination
+Djinn of Wishes
+
+
+
+
+
+
+
+
+
+
+
 Dwarven Priest
+Dwindle
+
+
+
+
+
+
+
+
+
+Essence Scatter
+Exclusion Mage
+
+
+
+
+
+
+
+
+
+
+
+
+
+Frilled Sea Serpent
 Gallant Cavalry
+
+
+Gearsmith Prodigy
+
+
+Ghostform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Herald of Faith
+
 Hieromancer's Cage
+
+
+
+Horizon Scholar
+
+
+
+
+
+
 Inspired Charge
 Invoke the Divine
+
+
+
+
+
 Isolate
+
 Knight of the Tusk
+
 Knight's Pledge
 Knightly Valor
+
+
 Lena, Selfless Champion
 Leonin Vanguard
 Leonin Warleader
+
+
+
+
+
+
+
+
 Loxodon Line Breaker
 Luminous Bonds
+
+
 Make a Stand
+
+
+
 Mentor of the Meek
+Metamorphic Alteration
+
 Mighty Leap
 Militia Bugler
+
+
+Mirror Image
+Mist-Cloaked Herald
+Mistcaller
+
+
+
+
+
+Mystic Archaeologist
+
+
+
 Novice Knight
+
+Omenspeaker
+Omniscience
+
+One with the Machine
+
 Oreskos Swiftclaw
+
+
+Patient Rebuilding
 Pegasus Courser
+
+
+
+
+
+
+
+
+
+
+
+Psychic Corrosion
+
+
+
+
+
+
+
+
+
 Remorseful Cleric
 Resplendent Angel
 Revitalize
+
+Riddlemaster Sphinx
+
+
+
+
+
 Rustwing Falcon
+Sai, Master Thopterist
+Salvager of Secrets
+
+
+
+
+
+
+
+Scholar of Stars
 Serra's Guardian
 Shield Mare
+
+
+
+Sift
+
 Silverbeak Griffin
+
+
+Skilled Animator
+
+
+
+Sleep
+
+Snapping Drake
+
+
+
+
 Star-Crowned Stag
+
+
+
+
 Sun Sentinel
 Suncleanser
+Supreme Phantom
+
+Surge Mare
+
+
+
+
+
+Switcheroo
 Take Vengeance
+
+
+
+
+
+Tezzeret, Artifice Master
+Tezzeret, Cruel Machinist
+
+
+
+
+
+
+
+
+
+
+
+
 Trusty Packbeast
+
+
+
+
 Valiant Knight

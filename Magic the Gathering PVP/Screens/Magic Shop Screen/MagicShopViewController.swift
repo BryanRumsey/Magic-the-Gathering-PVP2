@@ -73,14 +73,14 @@ class magicShopViewController: UIViewController {
     }
     
     func getLibraryLimit(){
-        let libLimRef = ref.child("users/\(self.userID)/libraryLimit")
+        let libLimRef = ref.child("users/\(self.userID)/collection/libraryLimit")
         libLimRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.libraryLimit = snapshot.value as! Int
         })
     }
     
     func getCardBoxLimit(){
-        let cbLimRef = ref.child("users/\(self.userID)/cardBoxLimit")
+        let cbLimRef = ref.child("users/\(self.userID)/collection/Card Box/cardBoxLimit")
         cbLimRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.cardBoxLimit = snapshot.value as! Int
         })
@@ -149,7 +149,7 @@ extension magicShopViewController: UICollectionViewDataSource, UICollectionViewD
                 self.libraryLimit = self.libraryLimit + 1
                 let userRef = self.ref.child("users/\(self.userID)")
                 userRef.child("coins").setValue(self.coins)
-                userRef.child("libraryLimit").setValue(self.libraryLimit)
+                userRef.child("collection/libraryLimit").setValue(self.libraryLimit)
             }
             let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) in }
             alert.addAction(action)
@@ -162,7 +162,7 @@ extension magicShopViewController: UICollectionViewDataSource, UICollectionViewD
                 self.cardBoxLimit = self.cardBoxLimit + 10
                 let userRef = self.ref.child("users/\(self.userID)")
                 userRef.child("coins").setValue(self.coins)
-                userRef.child("cardBoxLimit").setValue(self.cardBoxLimit)
+                userRef.child("collection/Card Box/cardBoxLimit").setValue(self.cardBoxLimit)
             }
             let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) in }
             alert.addAction(action)
