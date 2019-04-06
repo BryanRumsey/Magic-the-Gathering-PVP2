@@ -1,4 +1,4 @@
-
+Abnormal Endurance
 
 Aegis of the Heavens
 
@@ -20,7 +20,7 @@ Anticipate
 
 
 
-
+Arisen Gorgon
 
 Aven Wind Mage
 Aviation Pioneer
@@ -29,10 +29,10 @@ Aviation Pioneer
 
 Befuddle
 
+Blood Divination
 
-
-
-
+Bogstomper
+Bone Dragon
 Bone to Ash
 
 
@@ -43,7 +43,7 @@ Cavalry Drillmaster
 
 
 
-
+Child of Night
 
 
 Cleansing Nova
@@ -55,19 +55,20 @@ Court Cleric
 
 
 Daybreak Chaplain
+Death Baron
 
 
-
-
+Demon of Catastrophes
 Departed Deckhand
 
 
 
-
+Diregraf Ghoul
 
 Disperse
 Divination
 Djinn of Wishes
+Doomed Dissenter
 
 
 
@@ -77,8 +78,7 @@ Djinn of Wishes
 
 
 
-
-
+Duress
 Dwarven Priest
 Dwindle
 
@@ -89,10 +89,11 @@ Dwindle
 
 
 
-
+Epicure of Blood
 Essence Scatter
 Exclusion Mage
 
+Fell Specter
 
 
 
@@ -103,8 +104,7 @@ Exclusion Mage
 
 
 
-
-
+Fraying Omnipotence
 Frilled Sea Serpent
 Gallant Cavalry
 
@@ -121,10 +121,10 @@ Ghostform
 
 
 
-
-
-
-
+Grasping Scoundrel
+Gravedigger
+Gravewaker
+Grave Marshal
 
 
 
@@ -133,17 +133,17 @@ Herald of Faith
 Hieromancer's Cage
 
 
-
+Hired Blade
 Horizon Scholar
 
 
-
-
-
+Infectious Horror
+Infernal Reckoning
+Infernal Scarring
 
 Inspired Charge
 Invoke the Divine
-
+Isareth the Awakener
 
 
 
@@ -159,17 +159,17 @@ Knightly Valor
 Lena, Selfless Champion
 Leonin Vanguard
 Leonin Warleader
+Lich's Caress
 
 
-
-
-
-
-
+Liliana's Contract
+Liliana's Spoils
+Liliana, the Necromancer
+Liliana, Untouched by Death
 
 Loxodon Line Breaker
 Luminous Bonds
-
+Macabre Waltz
 
 Make a Stand
 
@@ -181,7 +181,7 @@ Metamorphic Alteration
 Mighty Leap
 Militia Bugler
 
-
+Mind Rot
 Mirror Image
 Mist-Cloaked Herald
 Mistcaller
@@ -189,18 +189,18 @@ Mistcaller
 
 
 
-
+Murder
 Mystic Archaeologist
 
 
-
+Nightmare's Thirst
 Novice Knight
 
 Omenspeaker
 Omniscience
 
 One with the Machine
-
+Open the Grave
 Oreskos Swiftclaw
 
 
@@ -208,8 +208,8 @@ Patient Rebuilding
 Pegasus Courser
 
 
-
-
+Phylactery Lich
+Plague Mare
 
 
 
@@ -221,8 +221,8 @@ Psychic Corrosion
 
 
 
-
-
+Ravenous Harpy
+Reassembling Skeleton
 
 
 
@@ -232,7 +232,7 @@ Resplendent Angel
 Revitalize
 
 Riddlemaster Sphinx
-
+Rise from the Grave
 
 
 
@@ -257,22 +257,22 @@ Sift
 
 Silverbeak Griffin
 
-
+Skeleton Archer
 Skilled Animator
-
+Skymarch Bloodletter
 
 
 Sleep
 
 Snapping Drake
 
-
+Sovereign's Bite
 
 
 Star-Crowned Stag
+Stitcher's Supplier
 
-
-
+Strangling Spores
 
 Sun Sentinel
 Suncleanser
@@ -287,7 +287,7 @@ Surge Mare
 Switcheroo
 Take Vengeance
 
-
+Tattered Mummy
 
 
 
@@ -306,11 +306,13 @@ Totally Lost
 
 
 Trusty Packbeast
-
+Two-Headed Zombie
 Uncomfortable Chill
 
 
 Valiant Knight
+Vampire Neonate
+Vampire Sovereign
 
 
 
@@ -320,9 +322,7 @@ Valiant Knight
 
 
 
-
-
-
+Walking Corpse
 Wall of Mist
 
 Waterknot
