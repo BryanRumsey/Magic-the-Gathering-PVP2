@@ -1,5 +1,5 @@
 Abnormal Endurance
-
+Act of Treason
 Aegis of the Heavens
 
 Aether Tunnel
@@ -12,25 +12,25 @@ Ajani's Pridemate
 Ajani's Welcome
 Ajani, Adversary of Tyrants
 Ajani, Wise Counselor
-
+Alpine Moon
 
 Angel of the Dawn
 
 Anticipate
-
+Apex of Power
 
 
 Arisen Gorgon
 
 Aven Wind Mage
 Aviation Pioneer
-
+Banefire
 
 
 Befuddle
 
 Blood Divination
-
+Boggart Brute
 Bogstomper
 Bone Dragon
 Bone to Ash
@@ -38,7 +38,7 @@ Bone to Ash
 
 Cancel
 
-
+Catalyst Elemental
 Cavalry Drillmaster
 
 
@@ -50,28 +50,28 @@ Cleansing Nova
 
 
 Court Cleric
+Crash Through
 
 
-
-
+Dark-Dweller Oracle
 Daybreak Chaplain
 Death Baron
 
-
+Demanding Dragon
 Demon of Catastrophes
 Departed Deckhand
 
 
 
 Diregraf Ghoul
-
+Dismissive Pyromancer
 Disperse
 Divination
 Djinn of Wishes
 Doomed Dissenter
+Doublecast
 
-
-
+Dragon Egg
 
 
 
@@ -81,7 +81,7 @@ Doomed Dissenter
 Duress
 Dwarven Priest
 Dwindle
-
+Electrify
 
 
 
@@ -95,8 +95,8 @@ Exclusion Mage
 
 Fell Specter
 
-
-
+Fiery Finish
+Fire Elemental
 
 
 
@@ -116,18 +116,18 @@ Ghostform
 
 
 
+Goblin Instigator
+Goblin Motivator
 
-
-
-
+Goblin Trashmaster
 
 Grasping Scoundrel
 Gravedigger
 Gravewaker
 Grave Marshal
 
-
-
+Guttersnipe
+Havoc Devils
 Herald of Faith
 
 Hieromancer's Cage
@@ -135,12 +135,12 @@ Hieromancer's Cage
 
 Hired Blade
 Horizon Scholar
-
+Hostile Minotaur
 
 Infectious Horror
 Infernal Reckoning
 Infernal Scarring
-
+Inferno Hellion
 Inspired Charge
 Invoke the Divine
 Isareth the Awakener
@@ -149,19 +149,19 @@ Isareth the Awakener
 
 
 Isolate
-
+Kargan Dragonrider
 Knight of the Tusk
 
 Knight's Pledge
 Knightly Valor
-
-
+Lathliss, Dragon Queen
+Lava Axe
 Lena, Selfless Champion
 Leonin Vanguard
 Leonin Warleader
 Lich's Caress
-
-
+Lightning Mare
+Lightning Strike
 Liliana's Contract
 Liliana's Spoils
 Liliana, the Necromancer
@@ -198,7 +198,7 @@ Novice Knight
 
 Omenspeaker
 Omniscience
-
+Onakke Ogre
 One with the Machine
 Open the Grave
 Oreskos Swiftclaw
@@ -220,7 +220,7 @@ Plague Mare
 Psychic Corrosion
 
 
-
+Radiating Lightning
 Ravenous Harpy
 Reassembling Skeleton
 
@@ -240,19 +240,19 @@ Rise from the Grave
 Rustwing Falcon
 Sai, Master Thopterist
 Salvager of Secrets
-
-
-
-
-
+Sarkhan's Dragonfire
+Sarkhan's Unsealing
+Sarkhan's Whelp
+Sarkhan, Dragonsoul
+Sarkhan, Fireblood
 
 
 Scholar of Stars
 Serra's Guardian
 Shield Mare
-
-
-
+Shivan Dragon
+Shock
+Siegebreaker Giant
 Sift
 
 Silverbeak Griffin
@@ -263,12 +263,12 @@ Skymarch Bloodletter
 
 
 Sleep
-
+Smelt
 Snapping Drake
 
 Sovereign's Bite
-
-
+Sparktonque Dragon
+Spit Flame
 Star-Crowned Stag
 Stitcher's Supplier
 
@@ -277,7 +277,7 @@ Strangling Spores
 Sun Sentinel
 Suncleanser
 Supreme Phantom
-
+Sure Strike
 Surge Mare
 
 
@@ -288,7 +288,7 @@ Switcheroo
 Take Vengeance
 
 Tattered Mummy
-
+Tectonic Rift
 
 
 Tezzeret, Artifice Master
@@ -296,15 +296,15 @@ Tezzeret, Cruel Machinist
 
 
 
-
+Thud
 
 
 Tolarian Scholar
-
+Tormenting Voice
 Totally Lost
 
 
-
+Trumpet Blast
 Trusty Packbeast
 Two-Headed Zombie
 Uncomfortable Chill
@@ -313,15 +313,15 @@ Uncomfortable Chill
 Valiant Knight
 Vampire Neonate
 Vampire Sovereign
+Viashino Pyromancer
 
 
 
 
 
 
-
-
-
+Volcanic Dragon
+Volley Veteran
 Walking Corpse
 Wall of Mist
 
