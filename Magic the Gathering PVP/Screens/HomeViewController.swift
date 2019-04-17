@@ -99,4 +99,7 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "logout", sender: self)
     }
     
+    @IBAction func challengePlayer(_ sender: Any) {
+        
+    }
 }

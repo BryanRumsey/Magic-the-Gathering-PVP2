@@ -81,8 +81,10 @@ class CardCollectionViewController: UIViewController {
             nameCRef.removeObserver(withHandle: self.postHandle1)
         }
         postHandle1 = nameCRef.observe(DataEventType.childAdded, with: { (snapshot) in
-            self.collectionNamesArray.append(snapshot.key)
-            self.getCollectionCoverImage(name: snapshot.key)
+            if snapshot.key != "libraryLimit" {
+                self.collectionNamesArray.append(snapshot.key)
+                self.getCollectionCoverImage(name: snapshot.key)
+            }
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.displayArray1.append("add")
@@ -93,7 +95,10 @@ class CardCollectionViewController: UIViewController {
     func getCollectionCoverImage(name: String){
         let coverCRef = ref.child("users/\(userID)/collection/\(name)/cover")
         coverCRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            self.displayArray1.append(snapshot.value as! String)
+            let data = snapshot.value as? String ?? nil
+            if data != nil{
+                self.displayArray1.append(snapshot.value as! String)
+            }
         })
     }
     

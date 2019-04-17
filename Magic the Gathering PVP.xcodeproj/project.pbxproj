@@ -11,6 +11,7 @@
 		1EE0E94799EFED48180A7E54 /* Pods_Magic_the_Gathering_PVPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294EAD471060DD9E2875DFD6 /* Pods_Magic_the_Gathering_PVPTests.framework */; };
 		26168C5B221123D400A6FF05 /* CardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26168C5A221123D400A6FF05 /* CardCollection.swift */; };
 		26168C5D221124DB00A6FF05 /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26168C5C221124DB00A6FF05 /* CardCollectionViewController.swift */; };
+		262CE5F5226587DF00538D42 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262CE5F4226587DF00538D42 /* Field.swift */; };
 		265AD3C322413F9D00CE99ED /* MagicShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265AD3C222413F9D00CE99ED /* MagicShopViewController.swift */; };
 		266142082207F6AC008A7120 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266142072207F6AC008A7120 /* LoginViewController.swift */; };
 		2661420A22080273008A7120 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2661420922080273008A7120 /* HomeViewController.swift */; };
@@ -21,9 +22,6 @@
 		266F3DBC222455E300C1068B /* NewLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266F3DBB222455E300C1068B /* NewLibrary.swift */; };
 		266F3DBE2224560900C1068B /* CardBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266F3DBD2224560900C1068B /* CardBox.swift */; };
 		268E782922036625000163A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E782822036625000163A3 /* AppDelegate.swift */; };
-		268E782B22036625000163A3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 268E782A22036625000163A3 /* GameScene.sks */; };
-		268E782D22036625000163A3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 268E782C22036625000163A3 /* Actions.sks */; };
-		268E782F22036625000163A3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E782E22036625000163A3 /* GameScene.swift */; };
 		268E783122036625000163A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E783022036625000163A3 /* GameViewController.swift */; };
 		268E783422036625000163A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268E783222036625000163A3 /* Main.storyboard */; };
 		268E783922036626000163A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268E783722036626000163A3 /* LaunchScreen.storyboard */; };
@@ -35,6 +33,15 @@
 		26C47B96222B0712000E4BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C47B95222B0712000E4BE8 /* Assets.xcassets */; };
 		26D4204322086EAA0090DCE8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4204222086EAA0090DCE8 /* CreateAccountViewController.swift */; };
 		26D420472208949F0090DCE8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D420462208949F0090DCE8 /* ResetPasswordViewController.swift */; };
+		26D75707225CE18500BAEB5E /* HandCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75706225CE18500BAEB5E /* HandCollectionView.swift */; };
+		26D75709225CE74F00BAEB5E /* LandCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75708225CE74F00BAEB5E /* LandCollectionView.swift */; };
+		26D7570B225CE78400BAEB5E /* FieldCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7570A225CE78400BAEB5E /* FieldCollectionView.swift */; };
+		26D7570E225CF99A00BAEB5E /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7570D225CF99A00BAEB5E /* Cards.swift */; };
+		26D75710225E221100BAEB5E /* Exile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7570F225E221100BAEB5E /* Exile.swift */; };
+		26D75712225E2A0400BAEB5E /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75711225E2A0400BAEB5E /* Library.swift */; };
+		26D75714225E2E7200BAEB5E /* Discard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75713225E2E7200BAEB5E /* Discard.swift */; };
+		26D75716225E318A00BAEB5E /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75715225E318A00BAEB5E /* Hand.swift */; };
+		26D75718225E332500BAEB5E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75717225E332500BAEB5E /* Player.swift */; };
 		26DB82A32235FE5D00F3961D /* TutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB82A22235FE5D00F3961D /* TutorialsViewController.swift */; };
 		26DB82A52235FE9D00F3961D /* TutorialsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB82A42235FE9D00F3961D /* TutorialsTableCell.swift */; };
 		26DB82AA22360DDA00F3961D /* addLibrary.mov in Resources */ = {isa = PBXBuildFile; fileRef = 26DB82A722360DDA00F3961D /* addLibrary.mov */; };
@@ -44,6 +51,7 @@
 		26DB82B022360DF600F3961D /* requestCardAdded.mov in Resources */ = {isa = PBXBuildFile; fileRef = 26DB82AF22360DF600F3961D /* requestCardAdded.mov */; };
 		26DC9D4C22416177002BD1F1 /* ShopItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC9D4B22416177002BD1F1 /* ShopItems.swift */; };
 		26E42EF7220F7EFC00D3C595 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26E42EF6220F7EFB00D3C595 /* GoogleService-Info.plist */; };
+		26FD1CF122663671000E7F5C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD1CEF22663671000E7F5C /* GameScene.swift */; };
 		57A9406EBDE6491D3954C1D5 /* Pods_Magic_the_Gathering_PVPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC2FE74731191A74B2F75120 /* Pods_Magic_the_Gathering_PVPUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +78,7 @@
 		1C1BDA910817DC7471356FFB /* Pods-Magic the Gathering PVPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic the Gathering PVPUITests.release.xcconfig"; path = "Target Support Files/Pods-Magic the Gathering PVPUITests/Pods-Magic the Gathering PVPUITests.release.xcconfig"; sourceTree = "<group>"; };
 		26168C5A221123D400A6FF05 /* CardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
 		26168C5C221124DB00A6FF05 /* CardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
+		262CE5F4226587DF00538D42 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		265AD3C222413F9D00CE99ED /* MagicShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopViewController.swift; sourceTree = "<group>"; };
 		266142072207F6AC008A7120 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2661420922080273008A7120 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -82,9 +91,6 @@
 		266F3DBD2224560900C1068B /* CardBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBox.swift; sourceTree = "<group>"; };
 		268E782522036625000163A3 /* Magic the Gathering PVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic the Gathering PVP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		268E782822036625000163A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		268E782A22036625000163A3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		268E782C22036625000163A3 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		268E782E22036625000163A3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		268E783022036625000163A3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		268E783322036625000163A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		268E783822036626000163A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +107,15 @@
 		26C47B95222B0712000E4BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26D4204222086EAA0090DCE8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		26D420462208949F0090DCE8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		26D75706225CE18500BAEB5E /* HandCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandCollectionView.swift; sourceTree = "<group>"; };
+		26D75708225CE74F00BAEB5E /* LandCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCollectionView.swift; sourceTree = "<group>"; };
+		26D7570A225CE78400BAEB5E /* FieldCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCollectionView.swift; sourceTree = "<group>"; };
+		26D7570D225CF99A00BAEB5E /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		26D7570F225E221100BAEB5E /* Exile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exile.swift; sourceTree = "<group>"; };
+		26D75711225E2A0400BAEB5E /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		26D75713225E2E7200BAEB5E /* Discard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discard.swift; sourceTree = "<group>"; };
+		26D75715225E318A00BAEB5E /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		26D75717225E332500BAEB5E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		26DB82A22235FE5D00F3961D /* TutorialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsViewController.swift; sourceTree = "<group>"; };
 		26DB82A42235FE9D00F3961D /* TutorialsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsTableCell.swift; sourceTree = "<group>"; };
 		26DB82A722360DDA00F3961D /* addLibrary.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = addLibrary.mov; sourceTree = "<group>"; };
@@ -110,6 +125,7 @@
 		26DB82AF22360DF600F3961D /* requestCardAdded.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = requestCardAdded.mov; sourceTree = "<group>"; };
 		26DC9D4B22416177002BD1F1 /* ShopItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItems.swift; sourceTree = "<group>"; };
 		26E42EF6220F7EFB00D3C595 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26FD1CEF22663671000E7F5C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		294EAD471060DD9E2875DFD6 /* Pods_Magic_the_Gathering_PVPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_the_Gathering_PVPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7FE5507E43485E1C74AC52 /* Pods-Magic the Gathering PVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic the Gathering PVPTests.debug.xcconfig"; path = "Target Support Files/Pods-Magic the Gathering PVPTests/Pods-Magic the Gathering PVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84A142198D252D232E1472B8 /* Pods_Magic_the_Gathering_PVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_the_Gathering_PVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,20 +186,21 @@
 		268E782722036625000163A3 /* Magic the Gathering PVP */ = {
 			isa = PBXGroup;
 			children = (
-				26DB82B222360E1800F3961D /* Tutorials */,
-				268E782822036625000163A3 /* AppDelegate.swift */,
-				268E782A22036625000163A3 /* GameScene.sks */,
-				268E782C22036625000163A3 /* Actions.sks */,
-				268E782E22036625000163A3 /* GameScene.swift */,
-				268E783022036625000163A3 /* GameViewController.swift */,
+				268E783A22036626000163A3 /* Info.plist */,
+				26E42EF6220F7EFB00D3C595 /* GoogleService-Info.plist */,
+				26D7570C225CF77900BAEB5E /* Assests */,
 				268E783722036626000163A3 /* LaunchScreen.storyboard */,
 				268E783222036625000163A3 /* Main.storyboard */,
 				26C476192232BC3300342BB3 /* Screens */,
 				26B3A6F0222D681700ACB621 /* alert.storyboard */,
 				26C4761A2232BC5500342BB3 /* Alert Screen */,
-				268E783A22036626000163A3 /* Info.plist */,
-				26E42EF6220F7EFB00D3C595 /* GoogleService-Info.plist */,
-				26C47B95222B0712000E4BE8 /* Assets.xcassets */,
+				26D7570D225CF99A00BAEB5E /* Cards.swift */,
+				26D7570F225E221100BAEB5E /* Exile.swift */,
+				26D75711225E2A0400BAEB5E /* Library.swift */,
+				26D75713225E2E7200BAEB5E /* Discard.swift */,
+				26D75715225E318A00BAEB5E /* Hand.swift */,
+				26D75717225E332500BAEB5E /* Player.swift */,
+				262CE5F4226587DF00538D42 /* Field.swift */,
 			);
 			path = "Magic the Gathering PVP";
 			sourceTree = "<group>";
@@ -238,6 +255,7 @@
 		26C476192232BC3300342BB3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				26D75705225CE13100BAEB5E /* Game Screen */,
 				26DB82A62235FEA900F3961D /* Tutorials Screen */,
 				266142072207F6AC008A7120 /* LoginViewController.swift */,
 				26D420462208949F0090DCE8 /* ResetPasswordViewController.swift */,
@@ -258,6 +276,28 @@
 				26B3A6F4222D7ADA00ACB621 /* AlertService.swift */,
 			);
 			path = "Alert Screen";
+			sourceTree = "<group>";
+		};
+		26D75705225CE13100BAEB5E /* Game Screen */ = {
+			isa = PBXGroup;
+			children = (
+				26FD1CEF22663671000E7F5C /* GameScene.swift */,
+				268E783022036625000163A3 /* GameViewController.swift */,
+				26D75706225CE18500BAEB5E /* HandCollectionView.swift */,
+				26D75708225CE74F00BAEB5E /* LandCollectionView.swift */,
+				26D7570A225CE78400BAEB5E /* FieldCollectionView.swift */,
+			);
+			path = "Game Screen";
+			sourceTree = "<group>";
+		};
+		26D7570C225CF77900BAEB5E /* Assests */ = {
+			isa = PBXGroup;
+			children = (
+				268E782822036625000163A3 /* AppDelegate.swift */,
+				26C47B95222B0712000E4BE8 /* Assets.xcassets */,
+				26DB82B222360E1800F3961D /* Tutorials */,
+			);
+			path = Assests;
 			sourceTree = "<group>";
 		};
 		26DB82A62235FEA900F3961D /* Tutorials Screen */ = {
@@ -423,12 +463,10 @@
 			files = (
 				26DB82AA22360DDA00F3961D /* addLibrary.mov in Resources */,
 				268E783422036625000163A3 /* Main.storyboard in Resources */,
-				268E782B22036625000163A3 /* GameScene.sks in Resources */,
 				26C47B96222B0712000E4BE8 /* Assets.xcassets in Resources */,
 				268E783922036626000163A3 /* LaunchScreen.storyboard in Resources */,
 				26E42EF7220F7EFC00D3C595 /* GoogleService-Info.plist in Resources */,
 				26DB82B022360DF600F3961D /* requestCardAdded.mov in Resources */,
-				268E782D22036625000163A3 /* Actions.sks in Resources */,
 				26B3A6F1222D681700ACB621 /* alert.storyboard in Resources */,
 				26DB82AB22360DDA00F3961D /* addToCardBox.mov in Resources */,
 				26DB82AE22360DEA00F3961D /* editLibrary.mov in Resources */,
@@ -555,25 +593,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DB82A32235FE5D00F3961D /* TutorialsViewController.swift in Sources */,
+				26D75712225E2A0400BAEB5E /* Library.swift in Sources */,
 				26168C5D221124DB00A6FF05 /* CardCollectionViewController.swift in Sources */,
 				265AD3C322413F9D00CE99ED /* MagicShopViewController.swift in Sources */,
+				26D75716225E318A00BAEB5E /* Hand.swift in Sources */,
+				26D7570E225CF99A00BAEB5E /* Cards.swift in Sources */,
 				26D4204322086EAA0090DCE8 /* CreateAccountViewController.swift in Sources */,
 				266F3DBC222455E300C1068B /* NewLibrary.swift in Sources */,
 				2661420A22080273008A7120 /* HomeViewController.swift in Sources */,
 				266142082207F6AC008A7120 /* LoginViewController.swift in Sources */,
 				26DB82A52235FE9D00F3961D /* TutorialsTableCell.swift in Sources */,
+				26D75718225E332500BAEB5E /* Player.swift in Sources */,
+				26D7570B225CE78400BAEB5E /* FieldCollectionView.swift in Sources */,
 				26DC9D4C22416177002BD1F1 /* ShopItems.swift in Sources */,
-				268E782F22036625000163A3 /* GameScene.swift in Sources */,
+				26D75710225E221100BAEB5E /* Exile.swift in Sources */,
 				266F3DB6221B467A00C1068B /* CardLibrary.swift in Sources */,
 				266ACFE6222703E200061303 /* ChatRoomViewController.swift in Sources */,
+				26D75709225CE74F00BAEB5E /* LandCollectionView.swift in Sources */,
 				268E783122036625000163A3 /* GameViewController.swift in Sources */,
 				266F3DBE2224560900C1068B /* CardBox.swift in Sources */,
+				262CE5F5226587DF00538D42 /* Field.swift in Sources */,
 				26168C5B221123D400A6FF05 /* CardCollection.swift in Sources */,
+				26FD1CF122663671000E7F5C /* GameScene.swift in Sources */,
 				26B3A6F3222D687E00ACB621 /* AlertViewController.swift in Sources */,
+				26D75714225E2E7200BAEB5E /* Discard.swift in Sources */,
 				266F3DBA22244E1700C1068B /* BuildLibraryViewController.swift in Sources */,
 				26B3A6F5222D7ADA00ACB621 /* AlertService.swift in Sources */,
 				266ACFE822272CD800061303 /* chatRoomTableCell.swift in Sources */,
 				268E782922036625000163A3 /* AppDelegate.swift in Sources */,
+				26D75707225CE18500BAEB5E /* HandCollectionView.swift in Sources */,
 				26D420472208949F0090DCE8 /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

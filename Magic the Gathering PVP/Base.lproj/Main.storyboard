@@ -299,6 +299,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
+                                    <action selector="challengePlayer:" destination="ucp-oj-eXp" eventType="touchUpInside" id="LWB-UF-thq"/>
                                     <segue destination="BV1-FR-VrT" kind="showDetail" id="48D-CN-O9P"/>
                                 </connections>
                             </button>
@@ -901,33 +902,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zy-4I-gXL">
-                                <rect key="frame" x="117" y="520" width="86" height="48"/>
-                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="K6a-Ws-8NQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5zy-4I-gXL">
+                                <rect key="frame" x="10" y="544" width="86" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="EJA-QM-xcV"/>
-                                    <constraint firstAttribute="width" constant="86" id="a3n-h9-Li6"/>
+                                    <constraint firstAttribute="height" constant="16" id="die-ww-Hsb"/>
+                                    <constraint firstAttribute="width" constant="86" id="o68-PG-ezQ"/>
                                 </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="End Match">
+                                            <attributes>
+                                                <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="14" name="ChalkboardSE-Light"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="ucp-oj-eXp" kind="showDetail" id="C3b-ic-iS2"/>
+                                    <segue destination="ucp-oj-eXp" kind="showDetail" identifier="endMatch" id="C3b-ic-iS2"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5zy-4I-gXL" firstAttribute="centerX" secondItem="4qk-I5-YsI" secondAttribute="centerX" id="Bds-UF-J0J"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="5zy-4I-gXL" secondAttribute="bottom" id="cGW-bg-lz3"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="K6a-Ws-8NQ" secondAttribute="trailing" id="LkW-6g-2gC"/>
+                            <constraint firstItem="K6a-Ws-8NQ" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="PDb-YC-Rdl"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="K6a-Ws-8NQ" secondAttribute="bottom" id="WZW-5v-Y0m"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="5zy-4I-gXL" secondAttribute="bottom" constant="8" id="dfw-4R-hIT"/>
+                            <constraint firstItem="5zy-4I-gXL" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="10" id="f2o-7x-AqJ"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="top" secondItem="K6a-Ws-8NQ" secondAttribute="top" constant="20" id="xKw-UM-dMJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <outlet property="background" destination="K6a-Ws-8NQ" id="7L9-CP-4nK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2781" y="131"/>
+            <point key="canvasLocation" x="2780.625" y="130.98591549295776"/>
         </scene>
         <!--ChatRoomViewController-->
         <scene sceneID="PDS-QJ-21e">
@@ -1886,6 +1902,76 @@
             </objects>
             <point key="canvasLocation" x="2781" y="-637"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9tS-9I-LX8">
+            <objects>
+                <viewController storyboardIdentifier="ChallengePlayerVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Mxp-eC-dtY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CgL-Va-Bpl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vxy-qf-HJA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mana_Collection3" translatesAutoresizingMaskIntoConstraints="NO" id="BV5-Gv-IRJ" userLabel="background image">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="PAT-BY-Iw6"/>
+                                    <constraint firstAttribute="height" constant="246" id="hVm-4s-KRa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1W-JY-8nk">
+                                <rect key="frame" x="0.0" y="10" width="320" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="E1Y-sV-LxW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="wkw-By-2fg"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Challenge Player">
+                                        <attributes>
+                                            <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="36" name="ChalkboardSE-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kj-kZ-0kq">
+                                <rect key="frame" x="85" y="159" width="150" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Friends">
+                                        <attributes>
+                                            <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vxy-qf-HJA" firstAttribute="trailing" secondItem="o2p-am-1VX" secondAttribute="trailing" id="0SJ-4t-DZb"/>
+                            <constraint firstItem="vxy-qf-HJA" firstAttribute="leading" secondItem="o2p-am-1VX" secondAttribute="leading" id="3ZJ-Mh-vr4"/>
+                            <constraint firstItem="vxy-qf-HJA" firstAttribute="bottom" secondItem="o2p-am-1VX" secondAttribute="bottom" id="DU9-ty-bVL"/>
+                            <constraint firstItem="vxy-qf-HJA" firstAttribute="top" secondItem="CgL-Va-Bpl" secondAttribute="top" id="KG2-rd-smw"/>
+                            <constraint firstItem="BV5-Gv-IRJ" firstAttribute="centerX" secondItem="CgL-Va-Bpl" secondAttribute="centerX" id="Y3X-Fi-ZhH"/>
+                            <constraint firstItem="BV5-Gv-IRJ" firstAttribute="top" secondItem="CgL-Va-Bpl" secondAttribute="top" id="bAa-Zw-T4g"/>
+                            <constraint firstItem="v1W-JY-8nk" firstAttribute="centerX" secondItem="CgL-Va-Bpl" secondAttribute="centerX" id="eSu-Rj-whC"/>
+                            <constraint firstItem="v1W-JY-8nk" firstAttribute="top" secondItem="o2p-am-1VX" secondAttribute="top" constant="-10" id="xEL-Op-1Q7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o2p-am-1VX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUV-zi-PzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3878" y="-638"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Mana_Collection3" width="1600" height="1200"/>
@@ -1895,7 +1981,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aEc-G5-nnh"/>
-        <segue reference="uE6-E8-z5S"/>
-        <segue reference="Mjk-FP-GdV"/>
+        <segue reference="C3b-ic-iS2"/>
+        <segue reference="mFm-wR-ahH"/>
     </inferredMetricsTieBreakers>
 </document>
