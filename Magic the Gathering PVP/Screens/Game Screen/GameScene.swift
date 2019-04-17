@@ -42,7 +42,7 @@ class GameScene: SKScene {
     let p2LifeLabel = SKLabelNode(text: "20")
     var p2Life: Int = 20 {
         didSet{
-            p2LifeLabel.text = "\(p1Life)"
+            p2LifeLabel.text = "\(p2Life)"
         }
     }
     
@@ -76,6 +76,8 @@ class GameScene: SKScene {
     
     var gamePhases: [String] = ["Untap Phase", "Draw Phase", "Main Phase One", "Declare Attack", "Declare Block", "Damage Step", "Main Phase Two", "End Phase"]
     var currentPhase: Int = -1
+    let activePlayerLabel = SKLabelNode(text: "")
+    let phaseLabel = SKLabelNode(text: "")
     var gameItems: [SKSpriteNode] = []
     var target: Int = -1
     
@@ -90,12 +92,31 @@ class GameScene: SKScene {
         setUpGameStatusBar()
         background()
         playerOne()
+        playerTwo()
+        setStartingPlayer()
+        currentPhase = 2
+        updatePhaseLabel()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.playGame()
+        }
     }
     func setUpGameStatusBar(){
         let statusBar = SKSpriteNode(color: UIColor.lightGray, size: CGSize(width: frame.width, height: 40.0))
         statusBar.position = CGPoint(x: frame.midX, y: frame.midY)
         statusBar.zPosition = -1
         addChild(statusBar)
+        
+        activePlayerLabel.fontName = "Chalkboard SE Light"
+        activePlayerLabel.fontSize = 14
+        activePlayerLabel.fontColor = UIColor.black
+        activePlayerLabel.position = CGPoint(x: statusBar.frame.midX, y: statusBar.frame.midY + 5)
+        addChild(activePlayerLabel)
+        
+        phaseLabel.fontName = "Chalkboard SE Light"
+        phaseLabel.fontSize = 14
+        phaseLabel.fontColor = UIColor.black
+        phaseLabel.position = CGPoint(x: statusBar.frame.midX, y: statusBar.frame.midY - 15)
+        addChild(phaseLabel)
         
         p1NameLabel.text = "\(player1.name)"
         p1NameLabel.fontName = "Chalkboard SE Light"
@@ -181,7 +202,45 @@ class GameScene: SKScene {
     }
     
     func playerTwo(){
+        let p2Library = SKSpriteNode(imageNamed: "Magic_Card_Back")
+        p2Library.name = "Library"
+        p2Library.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.minY) + sceneYBuffer + elementHeight/2)
+        p2Library.zPosition = 0
+        p2Library.size = CGSize(width: elementWidth, height: elementHeight)
+        gameItems.append(p2Library)
+        addChild(p2Library)
         
+        let p2Discard = SKSpriteNode(imageNamed: "add")
+        p2Discard.name = "Discard Pile"
+        p2Discard.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.minY) + sceneYBuffer + (elementHeight*3)/2 + 10)
+        p2Discard.zPosition = 0
+        p2Discard.size = CGSize(width: elementWidth, height: elementHeight)
+        gameItems.append(p2Discard)
+        addChild(p2Discard)
+        
+        let p2Exile = SKSpriteNode(imageNamed: "add")
+        p2Exile.name = "Exile Pile"
+        p2Exile.position = CGPoint(x: Int(frame.maxX) - sceneXBuffer - elementWidth/2, y: Int(frame.minY) + sceneYBuffer + elementHeight/2)
+        p2Exile.zPosition = 0
+        p2Exile.size = CGSize(width: elementWidth, height: elementHeight)
+        gameItems.append(p2Exile)
+        addChild(p2Exile)
+    }
+    
+    func setStartingPlayer(){
+        var p1Dice = Int(arc4random_uniform(UInt32(6))) + 1
+        var p2Dice = Int(arc4random_uniform(UInt32(6))) + 1
+        while p1Dice == p2Dice{
+            p1Dice = Int(arc4random_uniform(UInt32(6))) + 1
+            p2Dice = Int(arc4random_uniform(UInt32(6))) + 1
+        }
+        if p1Dice > p2Dice {
+            player1.activePlayer = true
+            activePlayerLabel.text = player1.name
+        }else{
+            player2.activePlayer = true
+            activePlayerLabel.text = player2.name
+        }
     }
     
     func setUpField(){
@@ -189,10 +248,15 @@ class GameScene: SKScene {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
             self.player1.shuffleLibrary()
             for i in 0..<7{
+                var startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.gameItems[0].frame.width)
+                startX += self.elementWidth*3/4*i
+                let startY = Int(self.frame.minY) + self.sceneYBuffer
+                
                 self.player1.drawCard()
+                self.createHandNode(card: self.player1.hand.hand[i], player: self.player1, x: startX, y: startY)
                 //add hand images to field
             }
-            self.playGame()
+            print(self.player1.hand.hand.count)
         }
         //buildLibrary(user: "Oliver", libraryName: "deckOne", player: player2)
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
@@ -258,13 +322,39 @@ class GameScene: SKScene {
             }
         })
     }
+    
+    func createHandNode(card: Cards, player: Player, x: Int, y: Int){
+        if player.name == player1.name {
+            let handNode = SKSpriteNode(imageNamed: card.image)
+            handNode.name = card.name
+            handNode.position = CGPoint(x: x + elementWidth/2, y: y + elementHeight/2)
+            handNode.zPosition = 0
+            handNode.size = CGSize(width: elementWidth, height: elementHeight)
+            gameItems.append(handNode)
+            addChild(handNode)
+        }
+    }
 
     func playGame(){
-        currentPhase = 2
-        
-        if gamePhases[currentPhase] == "End Phase"{
-            changeActivePlayer()
-            currentPhase = 0
+        if currentPhase == 1{
+            if player1.activePlayer{
+                if player1.library.library.count <= 0{
+                    print("Game Over! \(player2.name) Wins!")
+                }else{
+                    //draw a card
+                }
+            }else if player2.activePlayer{
+                if player2.library.library.count <= 0{
+                    print("Game Over! \(player1.name) Wins!")
+                }else{
+                    //draw card
+                }
+            }
+        }
+        if player1.life <= 0 {
+            print("Game Over! \(player1.name) has 0 life. \(player2.name) Wins!")
+        }else if(player2.life <= 0){
+            print("Game Over! \(player2.name) has 0 life. \(player1.name) Wins!")
         }
     }
     
@@ -273,17 +363,29 @@ class GameScene: SKScene {
             player1.playedLand = false
             player1.activePlayer = false
             player2.activePlayer = true
+            activePlayerLabel.text = player2.name
             if player1.hand.hand.count > 7{
+                print(player2.hand.hand.count)
                 //player1.discardCard(card: <#T##Cards#>)
             }
         }else{
             player1.activePlayer = true
             player2.activePlayer = false
             player2.playedLand = false
+            activePlayerLabel.text = player1.name
             if player2.hand.hand.count > 7{
+                print(player2.hand.hand.count)
                 //player2.discardCard(card: <#T##Cards#>)
             }
         }
+    }
+    
+    func updatePhaseLabel(){
+        if currentPhase == gamePhases.count{
+            changeActivePlayer()
+            currentPhase = 0
+        }
+        phaseLabel.text = gamePhases[currentPhase]
     }
 
 
@@ -308,11 +410,20 @@ class GameScene: SKScene {
         let y = Int(location.y)
         let offsetY = elementHeight/2
         
+        if x >= Int(frame.midX) - 50 && x <= Int(frame.midX) + 50 && y >= Int(frame.midY) - 20 && y <= Int(frame.midY) + 20{
+            currentPhase += 1
+            updatePhaseLabel()
+            playGame()
+            print("Change Phase")
+        }
+        
         for i in 0..<gameItems.count{
             let itemX = Int(gameItems[i].position.x)
             let itemY = Int(frame.maxY - gameItems[i].position.y)
             if x >= itemX - offsetX && x <= itemX + offsetX && y >= itemY - offsetY && y <= itemY + offsetY{
+                target = i
                 print(gameItems[i].name!)
+                break
             }
         }
     }

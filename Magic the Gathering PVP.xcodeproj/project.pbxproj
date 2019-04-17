@@ -194,13 +194,6 @@
 				26C476192232BC3300342BB3 /* Screens */,
 				26B3A6F0222D681700ACB621 /* alert.storyboard */,
 				26C4761A2232BC5500342BB3 /* Alert Screen */,
-				26D7570D225CF99A00BAEB5E /* Cards.swift */,
-				26D7570F225E221100BAEB5E /* Exile.swift */,
-				26D75711225E2A0400BAEB5E /* Library.swift */,
-				26D75713225E2E7200BAEB5E /* Discard.swift */,
-				26D75715225E318A00BAEB5E /* Hand.swift */,
-				26D75717225E332500BAEB5E /* Player.swift */,
-				262CE5F4226587DF00538D42 /* Field.swift */,
 			);
 			path = "Magic the Gathering PVP";
 			sourceTree = "<group>";
@@ -221,6 +214,20 @@
 				268E785022036626000163A3 /* Info.plist */,
 			);
 			path = "Magic the Gathering PVPUITests";
+			sourceTree = "<group>";
+		};
+		26A4FDD322677EA300FD78E5 /* Field Objects */ = {
+			isa = PBXGroup;
+			children = (
+				26D7570D225CF99A00BAEB5E /* Cards.swift */,
+				26D7570F225E221100BAEB5E /* Exile.swift */,
+				26D75711225E2A0400BAEB5E /* Library.swift */,
+				26D75713225E2E7200BAEB5E /* Discard.swift */,
+				26D75715225E318A00BAEB5E /* Hand.swift */,
+				26D75717225E332500BAEB5E /* Player.swift */,
+				262CE5F4226587DF00538D42 /* Field.swift */,
+			);
+			path = "Field Objects";
 			sourceTree = "<group>";
 		};
 		26C476162232BAFA00342BB3 /* Collection Screen */ = {
@@ -281,6 +288,7 @@
 		26D75705225CE13100BAEB5E /* Game Screen */ = {
 			isa = PBXGroup;
 			children = (
+				26A4FDD322677EA300FD78E5 /* Field Objects */,
 				26FD1CEF22663671000E7F5C /* GameScene.swift */,
 				268E783022036625000163A3 /* GameViewController.swift */,
 				26D75706225CE18500BAEB5E /* HandCollectionView.swift */,
