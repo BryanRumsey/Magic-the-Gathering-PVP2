@@ -10,7 +10,7 @@ import SpriteKit
 import Firebase
 
 @objcMembers
-class GameScene: SKScene {
+class MainGameScene: SKScene {
     
     let gameView = GameViewController()
     
@@ -256,10 +256,10 @@ class GameScene: SKScene {
     
     func setUpField(){
         buildLibrary(user: userID, libraryName: p1LibraryName, player: player1)
-        buildLibrary(user: "Oliver", libraryName: "deckOne", player: self.player2)
+        //buildLibrary(user: "Oliver", libraryName: "deckOne", player: self.player2)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4){
             self.player1.shuffleLibrary()
-            self.player2.shuffleLibrary()
+            //self.player2.shuffleLibrary()
             for i in 0..<7{
                 var startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.gameItems[0].frame.width)
                 startX += self.elementWidth*3/4*i
@@ -267,10 +267,10 @@ class GameScene: SKScene {
                 let p2startY = Int(self.frame.maxY) - self.sceneYBuffer - Int(self.gameItems[0].frame.height)
                 
                 self.player1.drawCard()
-                self.player2.drawCard()
+                //self.player2.drawCard()
                 
                 self.createHandNode(card: self.player1.hand.hand[i], player: self.player1, x: startX, y: p1startY)
-                self.createHandNode(card: self.player2.hand.hand[i], player: self.player1, x: startX, y: p2startY)
+                //self.createHandNode(card: self.player2.hand.hand[i], player: self.player1, x: startX, y: p2startY)
                 
             }
             print(self.player1.library.library.count, self.player1.hand.hand.count)
@@ -373,12 +373,14 @@ class GameScene: SKScene {
         if currentPhase == 1{
             if player1.activePlayer{
                 if player1.library.library.count <= 0{
+                    showGameOverScene()
                     print("Game Over! \(player2.name) Wins!")
                 }else{
                     //draw a card
                 }
             }else if player2.activePlayer{
                 if player2.library.library.count <= 0{
+                    showGameOverScene()
                     print("Game Over! \(player1.name) Wins!")
                 }else{
                     //draw card
@@ -422,17 +424,12 @@ class GameScene: SKScene {
         phaseLabel.text = gamePhases[currentPhase]
     }
 
-
-    func touchDown(atPoint pos : CGPoint) {
-        
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        
+    func showGameOverScene(){
+        let gameOverScene = GameOverScene(size: (scene?.view?.bounds.size)!)
+        self.scene?.view?.presentScene(gameOverScene, transition: SKTransition.doorsCloseHorizontal(withDuration: 1.0))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            self.gameView.endMatchTapped(self)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -460,6 +457,18 @@ class GameScene: SKScene {
                 break
             }
         }
+    }
+    
+    func touchDown(atPoint pos : CGPoint) {
+        
+    }
+    
+    func touchMoved(toPoint pos : CGPoint) {
+        
+    }
+    
+    func touchUp(atPoint pos : CGPoint) {
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

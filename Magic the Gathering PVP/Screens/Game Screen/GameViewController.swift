@@ -20,14 +20,7 @@ class GameViewController: UIViewController {
 
     @IBOutlet weak var background: UIImageView!
     
-    //Player 1
-    @IBOutlet weak var p1NameLabel: UILabel!
-    @IBOutlet weak var p1LifeLabel: UILabel!
     static var p1LibraryName: String = ""
-    
-    //Player 2
-    @IBOutlet weak var p2NameLabel: UILabel!
-    @IBOutlet weak var p2LifeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,11 +76,16 @@ class GameViewController: UIViewController {
 
     func loadScene(){
         if let view = self.view as! SKView? {
-            scene = GameScene(size: view.bounds.size)
+            scene = MainGameScene(size: view.bounds.size)
             scene.scaleMode = .aspectFill
             view.presentScene(scene)
             view.showsFPS = true
             view.showsNodeCount = true
         }
     }
+    
+    @IBAction func endMatchTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "endMatch", sender: self)
+    }
+    
 }

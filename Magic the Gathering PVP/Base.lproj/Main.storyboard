@@ -923,7 +923,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="ucp-oj-eXp" kind="showDetail" identifier="endMatch" id="C3b-ic-iS2"/>
+                                    <action selector="endMatchTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Wlk-NY-I24"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -939,6 +939,7 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="K6a-Ws-8NQ" id="7L9-CP-4nK"/>
+                        <segue destination="ucp-oj-eXp" kind="showDetail" identifier="endMatch" id="uvf-ay-s4i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -1981,7 +1982,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aEc-G5-nnh"/>
-        <segue reference="C3b-ic-iS2"/>
+        <segue reference="uvf-ay-s4i"/>
         <segue reference="mFm-wR-ahH"/>
     </inferredMetricsTieBreakers>
 </document>
