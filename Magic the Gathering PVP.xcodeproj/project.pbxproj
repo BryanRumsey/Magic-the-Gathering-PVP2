@@ -33,9 +33,6 @@
 		26C47B96222B0712000E4BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C47B95222B0712000E4BE8 /* Assets.xcassets */; };
 		26D4204322086EAA0090DCE8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4204222086EAA0090DCE8 /* CreateAccountViewController.swift */; };
 		26D420472208949F0090DCE8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D420462208949F0090DCE8 /* ResetPasswordViewController.swift */; };
-		26D75707225CE18500BAEB5E /* HandCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75706225CE18500BAEB5E /* HandCollectionView.swift */; };
-		26D75709225CE74F00BAEB5E /* LandCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75708225CE74F00BAEB5E /* LandCollectionView.swift */; };
-		26D7570B225CE78400BAEB5E /* FieldCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7570A225CE78400BAEB5E /* FieldCollectionView.swift */; };
 		26D7570E225CF99A00BAEB5E /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7570D225CF99A00BAEB5E /* Cards.swift */; };
 		26D75710225E221100BAEB5E /* Exile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7570F225E221100BAEB5E /* Exile.swift */; };
 		26D75712225E2A0400BAEB5E /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D75711225E2A0400BAEB5E /* Library.swift */; };
@@ -108,9 +105,6 @@
 		26C47B95222B0712000E4BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26D4204222086EAA0090DCE8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		26D420462208949F0090DCE8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		26D75706225CE18500BAEB5E /* HandCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandCollectionView.swift; sourceTree = "<group>"; };
-		26D75708225CE74F00BAEB5E /* LandCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCollectionView.swift; sourceTree = "<group>"; };
-		26D7570A225CE78400BAEB5E /* FieldCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCollectionView.swift; sourceTree = "<group>"; };
 		26D7570D225CF99A00BAEB5E /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		26D7570F225E221100BAEB5E /* Exile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exile.swift; sourceTree = "<group>"; };
 		26D75711225E2A0400BAEB5E /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
@@ -294,9 +288,6 @@
 				26FD1CEF22663671000E7F5C /* GameScene.swift */,
 				26F550BF2268D46B00CC3201 /* GameOverScene.swift */,
 				268E783022036625000163A3 /* GameViewController.swift */,
-				26D75706225CE18500BAEB5E /* HandCollectionView.swift */,
-				26D75708225CE74F00BAEB5E /* LandCollectionView.swift */,
-				26D7570A225CE78400BAEB5E /* FieldCollectionView.swift */,
 			);
 			path = "Game Screen";
 			sourceTree = "<group>";
@@ -615,12 +606,10 @@
 				266142082207F6AC008A7120 /* LoginViewController.swift in Sources */,
 				26DB82A52235FE9D00F3961D /* TutorialsTableCell.swift in Sources */,
 				26D75718225E332500BAEB5E /* Player.swift in Sources */,
-				26D7570B225CE78400BAEB5E /* FieldCollectionView.swift in Sources */,
 				26DC9D4C22416177002BD1F1 /* ShopItems.swift in Sources */,
 				26D75710225E221100BAEB5E /* Exile.swift in Sources */,
 				266F3DB6221B467A00C1068B /* CardLibrary.swift in Sources */,
 				266ACFE6222703E200061303 /* ChatRoomViewController.swift in Sources */,
-				26D75709225CE74F00BAEB5E /* LandCollectionView.swift in Sources */,
 				26F550C02268D46B00CC3201 /* GameOverScene.swift in Sources */,
 				268E783122036625000163A3 /* GameViewController.swift in Sources */,
 				266F3DBE2224560900C1068B /* CardBox.swift in Sources */,
@@ -633,7 +622,6 @@
 				26B3A6F5222D7ADA00ACB621 /* AlertService.swift in Sources */,
 				266ACFE822272CD800061303 /* chatRoomTableCell.swift in Sources */,
 				268E782922036625000163A3 /* AppDelegate.swift in Sources */,
-				26D75707225CE18500BAEB5E /* HandCollectionView.swift in Sources */,
 				26D420472208949F0090DCE8 /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

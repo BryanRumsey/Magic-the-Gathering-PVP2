@@ -19,4 +19,8 @@ class Field{
     func add(card: Cards){
         field.append(card)
     }
+    
+    func reset(){
+        field = []
+    }
 }

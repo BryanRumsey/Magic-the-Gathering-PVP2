@@ -56,4 +56,12 @@ class Player{
         let card = hand.remove(card: card)
         discardPile.add(card: card!)
     }
+    
+    func reset(){
+        library.reset()
+        hand.reset()
+        discardPile.reset()
+        exilePile.reset()
+        field.reset()
+    }
 }

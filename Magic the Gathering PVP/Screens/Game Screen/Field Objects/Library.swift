@@ -46,4 +46,8 @@ class Library{
         }
         return library.remove(at: 0)
     }
+    
+    func reset(){
+        library = []
+    }
 }

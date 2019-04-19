@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
     var userID: String = ""
 
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var endMatchButton: UIButton!
     
     static var p1LibraryName: String = ""
     

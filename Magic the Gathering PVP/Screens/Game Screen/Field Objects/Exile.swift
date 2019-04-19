@@ -45,4 +45,8 @@ class Exile{
             exilePile.remove(at: Index)
         }
     }
+    
+    func reset(){
+        exilePile = []
+    }
 }

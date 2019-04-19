@@ -36,6 +36,12 @@ class MainGameScene: SKScene {
             p1LifeLabel.text = "\(p1Life)"
         }
     }
+    var p1GameItems: [SKSpriteNode] = []
+    var p1Target: Int = -1
+    var p1LandX: Int = 0
+    var p1LandY: Int = 0
+    var p1NonLandX: Int = 0
+    var p1ManaPool: Int = 0
     
     var player2: Player = Player(name: "Oliver")
     let p2NameLabel = SKLabelNode(text: "Player 2")
@@ -45,6 +51,12 @@ class MainGameScene: SKScene {
             p2LifeLabel.text = "\(p2Life)"
         }
     }
+    var p2GameItems: [SKSpriteNode] = []
+    var p2Target: Int = -1
+    var p2LandX: Int = 0
+    var p2LandY: Int = 0
+    var p2NonLandX: Int = 0
+    var p2ManaPool: Int = 0
     
     //Card variables
     var i = 0, j = 0
@@ -61,11 +73,13 @@ class MainGameScene: SKScene {
     var p1subTypes: [[String]] = []
     var p1LoyaltyCounters: [Int] = []{
         didSet{
-            let card = Cards(name: self.p1cardName[i], image: self.p1image[i], playType: self.p1playType[i], castType: self.p1castType[i], cardType: self.p1cardType[i], atk: self.p1atk[i], def: self.p1def[i], legendary: self.p1legendary[i], color: self.p1color[i], attributes: self.p1attributes[i], subTypes: self.p1subTypes[i], loyaltyCoiunters: self.p1LoyaltyCounters[i])
+            let card = Cards(name: self.p1cardName[i], image: self.p1image[i], playType: self.p1playType[i], castType: self.p1castType[i], cardType: self.p1cardType[i], atk: self.p1atk[i], def: self.p1def[i], legendary: self.p1legendary[i], color: self.p1color[i], attributes: self.p1attributes[i], subTypes: self.p1subTypes[i], loyaltyCoiunters: self.p1LoyaltyCounters[i], cost: self.p1Cost[i])
             player1.library.add(card: card)
             self.i += 1
         }
     }
+    var p1Cost: [Int] = []
+    
     var p2cardName: [String] = []
     var p2image: [String] = []
     var p2playType: [String] = []
@@ -79,18 +93,19 @@ class MainGameScene: SKScene {
     var p2subTypes: [[String]] = []
     var p2LoyaltyCounters: [Int] = []{
         didSet{
-            let card = Cards(name: self.p2cardName[j], image: self.p2image[j], playType: self.p2playType[j], castType: self.p2castType[j], cardType: self.p2cardType[j], atk: self.p2atk[j], def: self.p2def[j], legendary: self.p2legendary[j], color: self.p2color[j], attributes: self.p2attributes[j], subTypes: self.p2subTypes[j], loyaltyCoiunters: self.p2LoyaltyCounters[j])
+            let card = Cards(name: self.p2cardName[j], image: self.p2image[j], playType: self.p2playType[j], castType: self.p2castType[j], cardType: self.p2cardType[j], atk: self.p2atk[j], def: self.p2def[j], legendary: self.p2legendary[j], color: self.p2color[j], attributes: self.p2attributes[j], subTypes: self.p2subTypes[j], loyaltyCoiunters: self.p2LoyaltyCounters[j], cost: self.p2Cost[j])
             player2.library.add(card: card)
             self.j += 1
         }
     }
+    var p2Cost: [Int] = []
     
     var gamePhases: [String] = ["Untap Phase", "Draw Phase", "Main Phase One", "Declare Attack", "Declare Block", "Damage Step", "Main Phase Two", "End Phase"]
     var currentPhase: Int = -1
     let activePlayerLabel = SKLabelNode(text: "")
     let phaseLabel = SKLabelNode(text: "")
-    var gameItems: [SKSpriteNode] = []
-    var target: Int = -1
+    let tap = SKAction.rotate(byAngle: -(CGFloat.pi/4), duration: 0.5)
+    let untap = SKAction.rotate(byAngle: (CGFloat.pi/4), duration: 0.5)
     
     override func didMove(to view: SKView) {
         ref = Database.database().reference()
@@ -192,7 +207,7 @@ class MainGameScene: SKScene {
         p1Library.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.minY) + sceneYBuffer + elementHeight/2)
         p1Library.zPosition = 0
         p1Library.size = CGSize(width: elementWidth, height: elementHeight)
-        gameItems.append(p1Library)
+        p1GameItems.append(p1Library)
         addChild(p1Library)
         
         let p1Discard = SKSpriteNode(imageNamed: "add")
@@ -200,15 +215,15 @@ class MainGameScene: SKScene {
         p1Discard.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.minY) + sceneYBuffer + (elementHeight*3)/2 + 10)
         p1Discard.zPosition = 0
         p1Discard.size = CGSize(width: elementWidth, height: elementHeight)
-        gameItems.append(p1Discard)
+        p1GameItems.append(p1Discard)
         addChild(p1Discard)
         
         let p1Exile = SKSpriteNode(imageNamed: "add")
         p1Exile.name = "Exile Pile"
-        p1Exile.position = CGPoint(x: Int(frame.maxX) - sceneXBuffer - elementWidth/2, y: Int(frame.minY) + sceneYBuffer + elementHeight/2)
+        p1Exile.position = CGPoint(x: Int(frame.maxX) - sceneXBuffer - elementWidth/2, y: Int(frame.minY) + sceneYBuffer + (elementHeight*5)/2 + 10)
         p1Exile.zPosition = 0
         p1Exile.size = CGSize(width: elementWidth, height: elementHeight)
-        gameItems.append(p1Exile)
+        p1GameItems.append(p1Exile)
         addChild(p1Exile)
     }
     
@@ -218,7 +233,7 @@ class MainGameScene: SKScene {
         p2Library.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.maxY) - sceneYBuffer - elementHeight/2)
         p2Library.zPosition = 0
         p2Library.size = CGSize(width: elementWidth, height: elementHeight)
-        gameItems.append(p2Library)
+        p2GameItems.append(p2Library)
         addChild(p2Library)
         
         let p2Discard = SKSpriteNode(imageNamed: "add")
@@ -226,7 +241,7 @@ class MainGameScene: SKScene {
         p2Discard.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.maxY) - sceneYBuffer*3/2 - (elementHeight*3)/2 + 10)
         p2Discard.zPosition = 0
         p2Discard.size = CGSize(width: elementWidth, height: elementHeight)
-        gameItems.append(p2Discard)
+        p2GameItems.append(p2Discard)
         addChild(p2Discard)
         
         let p2Exile = SKSpriteNode(imageNamed: "add")
@@ -234,7 +249,7 @@ class MainGameScene: SKScene {
         p2Exile.position = CGPoint(x: Int(frame.maxX) - sceneXBuffer - elementWidth/2, y: Int(frame.maxY) - sceneYBuffer - elementHeight/2)
         p2Exile.zPosition = 0
         p2Exile.size = CGSize(width: elementWidth, height: elementHeight)
-        gameItems.append(p2Exile)
+        p2GameItems.append(p2Exile)
         addChild(p2Exile)
     }
     
@@ -256,25 +271,30 @@ class MainGameScene: SKScene {
     
     func setUpField(){
         buildLibrary(user: userID, libraryName: p1LibraryName, player: player1)
-        //buildLibrary(user: "Oliver", libraryName: "deckOne", player: self.player2)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4){
+        buildLibrary(user: "Oliver", libraryName: "deckOne", player: self.player2)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.player1.shuffleLibrary()
-            //self.player2.shuffleLibrary()
+            self.player2.shuffleLibrary()
             for i in 0..<7{
-                var startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.gameItems[0].frame.width)
+                var startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.p1GameItems[0].frame.width)
                 startX += self.elementWidth*3/4*i
                 let p1startY = Int(self.frame.minY) + self.sceneYBuffer
-                let p2startY = Int(self.frame.maxY) - self.sceneYBuffer - Int(self.gameItems[0].frame.height)
+                let p2startY = Int(self.frame.maxY) - self.sceneYBuffer - Int(self.p1GameItems[0].frame.height)
                 
                 self.player1.drawCard()
-                //self.player2.drawCard()
+                self.player2.drawCard()
                 
                 self.createHandNode(card: self.player1.hand.hand[i], player: self.player1, x: startX, y: p1startY)
-                //self.createHandNode(card: self.player2.hand.hand[i], player: self.player1, x: startX, y: p2startY)
+                self.createHandNode(card: self.player2.hand.hand[i], player: self.player2, x: startX, y: p2startY)
                 
             }
-            print(self.player1.library.library.count, self.player1.hand.hand.count)
-            print(self.player2.library.library.count, self.player2.hand.hand.count)
+            self.p1LandX = Int(self.p1GameItems[3].position.x)
+            self.p1LandY = Int(self.p1GameItems[1].position.y) + 40
+            self.p1NonLandX = self.p1LandX
+            
+            self.p2LandX = Int(self.p2GameItems[3].position.x)
+            self.p2LandY = Int(self.p2GameItems[1].position.y)
+            self.p2NonLandX = self.p2LandX
         }
     }
 
@@ -295,6 +315,7 @@ class MainGameScene: SKScene {
             self.getData(dataRef: libRef.child("\(snapshot.key)/color"), type: "Color", player: player)
             self.getData(dataRef: libRef.child("\(snapshot.key)/attributes"), type: "Attributes", player: player)
             self.getData(dataRef: libRef.child("\(snapshot.key)/subTypes"), type: "Sub Types", player: player)
+            self.getData(dataRef: libRef.child("\(snapshot.key)/cost"), type: "Cost", player: player)
             self.getData(dataRef: libRef.child("\(snapshot.key)/loyaltyCounters"), type: "Loyalty Counters", player: player)
         })
     }
@@ -324,6 +345,8 @@ class MainGameScene: SKScene {
                     self.p1attributes.append((snapshot.value as! String).components(separatedBy: ","))
                 }else if type == "Sub Types"{
                     self.p1subTypes.append((snapshot.value as! String).components(separatedBy: ","))
+                }else if type == "Cost" {
+                    self.p1Cost.append(snapshot.value as! Int)
                 }else if type == "Loyalty Counters"{
                     self.p1LoyaltyCounters.append(snapshot.value as? Int ?? 0)
                 }
@@ -350,6 +373,8 @@ class MainGameScene: SKScene {
                     self.p2attributes.append((snapshot.value as! String).components(separatedBy: ","))
                 }else if type == "Sub Types"{
                     self.p2subTypes.append((snapshot.value as! String).components(separatedBy: ","))
+                }else if type == "Cost" {
+                    self.p2Cost.append(snapshot.value as! Int)
                 }else if type == "Loyalty Counters"{
                     self.p2LoyaltyCounters.append(snapshot.value as? Int ?? 0)
                 }
@@ -358,39 +383,133 @@ class MainGameScene: SKScene {
     }
     
     func createHandNode(card: Cards, player: Player, x: Int, y: Int){
+        let handNode = SKSpriteNode(imageNamed: card.image)
+        handNode.name = card.name
+        handNode.position = CGPoint(x: x + elementWidth/2, y: y + elementHeight/2)
+        handNode.zPosition = 0
+        handNode.size = CGSize(width: elementWidth, height: elementHeight)
+        addChild(handNode)
         if player.name == player1.name {
-            let handNode = SKSpriteNode(imageNamed: card.image)
-            handNode.name = card.name
-            handNode.position = CGPoint(x: x + elementWidth/2, y: y + elementHeight/2)
-            handNode.zPosition = 0
-            handNode.size = CGSize(width: elementWidth, height: elementHeight)
-            gameItems.append(handNode)
-            addChild(handNode)
+            p1GameItems.append(handNode)
+        }else{
+            p2GameItems.append(handNode)
         }
     }
 
     func playGame(){
-        if currentPhase == 1{
-            if player1.activePlayer{
-                if player1.library.library.count <= 0{
-                    showGameOverScene()
-                    print("Game Over! \(player2.name) Wins!")
-                }else{
-                    //draw a card
-                }
-            }else if player2.activePlayer{
-                if player2.library.library.count <= 0{
-                    showGameOverScene()
-                    print("Game Over! \(player1.name) Wins!")
-                }else{
-                    //draw card
+        if player1.activePlayer{
+            playerOnesTurn()
+        }else{
+            playerTwosTurn()
+        }
+    }
+    
+    func playerOnesTurn(){
+        if currentPhase == 0{
+            let fieldIndex = 3 + player1.hand.hand.count
+            for card in player1.field.field{
+                if card.tapped{
+                    p1GameItems[fieldIndex].run(untap)
                 }
             }
+            for card in p1GameItems{
+                print(card.name!)
+            }
+            playTurn(x: Int(frame.midX), y: Int(frame.midY))
+        }else if currentPhase == 1{
+            if player1.library.library.count <= 0{
+                showGameOverScene(user: "Oliver")
+                print("Game Over! \(player1) has no cards left to draw. \(player2.name) Wins!")
+            }else{
+                var startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.p1GameItems[0].frame.width)
+                startX += self.elementWidth*3/4*(player1.hand.hand.count)
+                let startY = Int(self.frame.minY) + self.sceneYBuffer
+                player1.drawCard()
+                createHandNode(card: player1.hand.hand.last!, player: player1, x: startX, y: startY)
+            }
+            for card in p1GameItems{
+                print(card.name!)
+            }
+            playTurn(x: Int(frame.midX), y: Int(frame.midY))
+        }else if currentPhase == 2{
+            if p1Target > 2{
+                if p1Target < player1.hand.hand.count + 3{
+                    let cardIndex = p1Target - 3
+                    let targetCard = player1.hand.hand[cardIndex]
+                    if !player1.playedLand && targetCard.cost == 0{
+                        player1.playedLand = true
+                        let startX = p1GameItems[3].position.x
+                        p1GameItems[p1Target].position = CGPoint(x: p1LandX, y: p1LandY)
+                        player1.field.add(card: player1.hand.remove(card: targetCard)!)
+                        for i in cardIndex..<player1.hand.hand.count{
+                            let newX = Int(startX) + self.elementWidth*3/4*i
+                            p1GameItems[p1Target + 1].position.x = CGFloat(newX)
+                            p1GameItems.swapAt(p1Target, p1Target + 1)
+                            p1Target += 1
+                        }
+                        if p1LandY == Int(p1GameItems[1].position.y) {
+                            p1LandY = Int(p1GameItems[1].position.y) + 40
+                            p1LandX += Int(p1GameItems[4].position.x - p1GameItems[3].position.x)
+                        }else{
+                            p1LandY -= 20
+                        }
+                    }else if targetCard.cost > 0 && p1ManaPool >= targetCard.cost{
+                        //play non land
+                    }
+                }else{
+                    let cardIndex = p1Target - 3 - player1.hand.hand.count
+                    let targetCard = player1.field.field[cardIndex]
+                    if targetCard.cost == 0 && !targetCard.tapped{
+                        targetCard.tap()
+                        p1GameItems[p1Target].run(tap)
+                        p1ManaPool += 1
+                        print("Basic Land on Field Tapped")
+                    }
+                }
+            }
+        }else if currentPhase == 3{
+            
+        }else if currentPhase == 4{
+            
+        }else if currentPhase == 5{
+            if player1.life <= 0 {
+                showGameOverScene(user: "Oliver")
+                print("Game Over! \(player1.name) has 0 life. \(player2.name) Wins!")
+            }
+        }else if currentPhase == 6{
+            
+        }else{
+            
         }
-        if player1.life <= 0 {
-            print("Game Over! \(player1.name) has 0 life. \(player2.name) Wins!")
-        }else if(player2.life <= 0){
-            print("Game Over! \(player2.name) has 0 life. \(player1.name) Wins!")
+        p1Target = -1
+        p2Target = -1
+    }
+    
+    func playerTwosTurn(){
+        if currentPhase == 0{
+            
+        }else if currentPhase == 1{
+            if player2.library.library.count <= 0{
+                showGameOverScene(user: self.userID)
+                print("Game Over! \(player2) has no cards left to draw. \(player1.name) Wins!")
+            }else{
+                //draw card
+            }
+        }else if currentPhase == 2{
+            
+        }else if currentPhase == 3{
+            
+        }else if currentPhase == 4{
+            
+        }else if currentPhase == 5{
+            if(player2.life <= 0){
+                showGameOverScene(user: self.userID)
+                print("Game Over! \(player2.name) has 0 life. \(player1.name) Wins!")
+            }
+        }else if currentPhase == 6{
+            
+        }else{
+            
         }
     }
     
@@ -399,6 +518,7 @@ class MainGameScene: SKScene {
             player1.playedLand = false
             player1.activePlayer = false
             player2.activePlayer = true
+            p1ManaPool = 0
             activePlayerLabel.text = player2.name
             if player1.hand.hand.count > 7{
                 print(player2.hand.hand.count)
@@ -408,6 +528,7 @@ class MainGameScene: SKScene {
             player1.activePlayer = true
             player2.activePlayer = false
             player2.playedLand = false
+            p2ManaPool = 0
             activePlayerLabel.text = player1.name
             if player2.hand.hand.count > 7{
                 print(player2.hand.hand.count)
@@ -424,39 +545,61 @@ class MainGameScene: SKScene {
         phaseLabel.text = gamePhases[currentPhase]
     }
 
-    func showGameOverScene(){
+    func showGameOverScene(user: String){
+        var p1Coins = 0
+        self.ref.child("users/\(userID)/coins").observeSingleEvent(of: .value) { (snapshot) in
+            p1Coins = snapshot.value as! Int
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if user == "Oliver"{
+                self.ref.child("users/\(self.userID)/coins").setValue(p1Coins + 2)
+            }else{
+                self.ref.child("users/\(self.userID)/coins").setValue(p1Coins + 10)
+            }
+        }
         let gameOverScene = GameOverScene(size: (scene?.view?.bounds.size)!)
         self.scene?.view?.presentScene(gameOverScene, transition: SKTransition.doorsCloseHorizontal(withDuration: 1.0))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-            self.gameView.endMatchTapped(self)
-        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first! as UITouch
         let location = touch.location(in: self.view)
         
-        let x = Int(location.x)
+        let x: Int = Int(location.x)
+        let y: Int = Int(location.y)
+        
+        playTurn(x: x, y: y)
+    }
+    
+    func playTurn(x: Int, y: Int){
         let offsetX = elementWidth/2
-        let y = Int(location.y)
         let offsetY = elementHeight/2
         
         if x >= Int(frame.midX) - 50 && x <= Int(frame.midX) + 50 && y >= Int(frame.midY) - 20 && y <= Int(frame.midY) + 20{
             currentPhase += 1
             updatePhaseLabel()
-            playGame()
-            print("Change Phase")
         }
-        
-        for i in 0..<gameItems.count{
-            let itemX = Int(gameItems[i].position.x)
-            let itemY = Int(frame.maxY - gameItems[i].position.y)
-            if x >= itemX - offsetX && x <= itemX + offsetX && y >= itemY - offsetY && y <= itemY + offsetY{
-                target = i
-                print(gameItems[i].name!)
-                break
+        if y > Int(frame.midY) - 20{
+            for i in 0..<p1GameItems.count{
+                let itemX = Int(p1GameItems[i].position.x)
+                let itemY = Int(frame.maxY - p1GameItems[i].position.y)
+                if x >= itemX - offsetX && x <= itemX + offsetX && y >= itemY - offsetY && y <= itemY + offsetY{
+                    p1Target = i
+                    break
+                }
             }
         }
+        if y < Int(frame.midY) + 20{
+            for i in 0..<p2GameItems.count{
+                let itemX = Int(p2GameItems[i].position.x)
+                let itemY = Int(frame.maxY - p2GameItems[i].position.y)
+                if x >= itemX - offsetX && x <= itemX + offsetX && y >= itemY - offsetY && y <= itemY + offsetY{
+                    p2Target = i
+                    break
+                }
+            }
+        }
+        playGame()
     }
     
     func touchDown(atPoint pos : CGPoint) {

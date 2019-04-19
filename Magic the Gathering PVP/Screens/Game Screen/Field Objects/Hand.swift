@@ -39,4 +39,8 @@ class Hand{
         }
         return nil
     }
+    
+    func reset(){
+        hand = []
+    }
 }

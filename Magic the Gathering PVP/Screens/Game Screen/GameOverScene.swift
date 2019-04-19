@@ -10,15 +10,13 @@ import SpriteKit
 
 class GameOverScene: SKScene {
     
+    let gameView = GameViewController()
+    
     override func didMove(to view: SKView) {
         let titleLabel = SKLabelNode(text: "Game Over")
         titleLabel.fontName = "Chalkboard SE Light"
         titleLabel.fontSize = 60
         titleLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         addChild(titleLabel)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
     }
 }

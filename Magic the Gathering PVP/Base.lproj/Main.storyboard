@@ -939,6 +939,7 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="K6a-Ws-8NQ" id="7L9-CP-4nK"/>
+                        <outlet property="endMatchButton" destination="5zy-4I-gXL" id="NOv-eR-8dO"/>
                         <segue destination="ucp-oj-eXp" kind="showDetail" identifier="endMatch" id="uvf-ay-s4i"/>
                     </connections>
                 </viewController>

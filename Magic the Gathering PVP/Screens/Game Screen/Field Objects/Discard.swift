@@ -46,4 +46,8 @@ class Discard{
     func setImage(){
         image = discardPile[0].image
     }
+    
+    func reset(){
+        discardPile = []
+    }
 }

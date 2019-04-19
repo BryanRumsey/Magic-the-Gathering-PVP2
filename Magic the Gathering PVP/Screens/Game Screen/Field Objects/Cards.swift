@@ -22,8 +22,10 @@ class Cards{
     var attributes: [String]
     var subTypes: [String]
     var loyaltyCoiunters: Int?
+    var cost: Int
+    var tapped: Bool = false
     
-    init(name: String, image: String, playType: String, castType: String, cardType: String, atk: Int, def: Int, legendary: Bool, color: String, attributes: [String], subTypes: [String], loyaltyCoiunters: Int){
+    init(name: String, image: String, playType: String, castType: String, cardType: String, atk: Int, def: Int, legendary: Bool, color: String, attributes: [String], subTypes: [String], loyaltyCoiunters: Int, cost: Int){
         self.name = name
         self.image = image
         self.playType = playType
@@ -36,5 +38,14 @@ class Cards{
         self.attributes = attributes
         self.subTypes = subTypes
         self.loyaltyCoiunters = loyaltyCoiunters
+        self.cost = cost
+    }
+    
+    func tap(){
+        self.tapped = true
+    }
+    
+    func untap(){
+        self.tapped = false
     }
 }
