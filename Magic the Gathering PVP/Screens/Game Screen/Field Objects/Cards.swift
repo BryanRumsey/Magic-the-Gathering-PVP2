@@ -23,7 +23,12 @@ class Cards{
     var subTypes: [String]
     var loyaltyCoiunters: Int?
     var cost: Int
+    
+    var summoningSickness: Bool = true
     var tapped: Bool = false
+    var attacking: Bool = false
+    var blocked: Bool = false
+    var damage: Int = 0
     
     init(name: String, image: String, playType: String, castType: String, cardType: String, atk: Int, def: Int, legendary: Bool, color: String, attributes: [String], subTypes: [String], loyaltyCoiunters: Int, cost: Int){
         self.name = name
@@ -39,6 +44,11 @@ class Cards{
         self.subTypes = subTypes
         self.loyaltyCoiunters = loyaltyCoiunters
         self.cost = cost
+        for attribute in attributes{
+            if attribute == "Haste"{
+                summoningSickness = false
+            }
+        }
     }
     
     func tap(){
@@ -48,4 +58,6 @@ class Cards{
     func untap(){
         self.tapped = false
     }
+    
+    
 }

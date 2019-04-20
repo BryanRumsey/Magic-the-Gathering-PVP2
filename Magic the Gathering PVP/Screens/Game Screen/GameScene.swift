@@ -33,6 +33,7 @@ class MainGameScene: SKScene {
     let p1LifeLabel = SKLabelNode(text: "20")
     var p1Life: Int = 20 {
         didSet{
+            player1.life = p1Life
             p1LifeLabel.text = "\(p1Life)"
         }
     }
@@ -48,6 +49,7 @@ class MainGameScene: SKScene {
     let p2LifeLabel = SKLabelNode(text: "20")
     var p2Life: Int = 20 {
         didSet{
+            player2.life = p2Life
             p2LifeLabel.text = "\(p2Life)"
         }
     }
@@ -106,6 +108,7 @@ class MainGameScene: SKScene {
     let phaseLabel = SKLabelNode(text: "")
     let tap = SKAction.rotate(byAngle: -(CGFloat.pi/4), duration: 0.5)
     let untap = SKAction.rotate(byAngle: (CGFloat.pi/4), duration: 0.5)
+    var targetNeeded: Bool = false
     
     override func didMove(to view: SKView) {
         ref = Database.database().reference()
@@ -220,7 +223,7 @@ class MainGameScene: SKScene {
         
         let p1Exile = SKSpriteNode(imageNamed: "add")
         p1Exile.name = "Exile Pile"
-        p1Exile.position = CGPoint(x: Int(frame.maxX) - sceneXBuffer - elementWidth/2, y: Int(frame.minY) + sceneYBuffer + (elementHeight*5)/2 + 10)
+        p1Exile.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.minY) + sceneYBuffer + (elementHeight*5)/2 + 20)
         p1Exile.zPosition = 0
         p1Exile.size = CGSize(width: elementWidth, height: elementHeight)
         p1GameItems.append(p1Exile)
@@ -246,7 +249,7 @@ class MainGameScene: SKScene {
         
         let p2Exile = SKSpriteNode(imageNamed: "add")
         p2Exile.name = "Exile Pile"
-        p2Exile.position = CGPoint(x: Int(frame.maxX) - sceneXBuffer - elementWidth/2, y: Int(frame.maxY) - sceneYBuffer - elementHeight/2)
+        p2Exile.position = CGPoint(x: Int(frame.minX) + sceneXBuffer + elementWidth/2, y: Int(frame.maxY) - sceneYBuffer*3/2 - elementHeight*5/2)
         p2Exile.zPosition = 0
         p2Exile.size = CGSize(width: elementWidth, height: elementHeight)
         p2GameItems.append(p2Exile)
@@ -275,15 +278,15 @@ class MainGameScene: SKScene {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.player1.shuffleLibrary()
             self.player2.shuffleLibrary()
+            for _ in 0..<7{
+                self.player1.drawCard()
+                self.player2.drawCard()
+            }
             for i in 0..<7{
                 var startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.p1GameItems[0].frame.width)
                 startX += self.elementWidth*3/4*i
                 let p1startY = Int(self.frame.minY) + self.sceneYBuffer
                 let p2startY = Int(self.frame.maxY) - self.sceneYBuffer - Int(self.p1GameItems[0].frame.height)
-                
-                self.player1.drawCard()
-                self.player2.drawCard()
-                
                 self.createHandNode(card: self.player1.hand.hand[i], player: self.player1, x: startX, y: p1startY)
                 self.createHandNode(card: self.player2.hand.hand[i], player: self.player2, x: startX, y: p2startY)
                 
@@ -390,9 +393,17 @@ class MainGameScene: SKScene {
         handNode.size = CGSize(width: elementWidth, height: elementHeight)
         addChild(handNode)
         if player.name == player1.name {
-            p1GameItems.append(handNode)
+            if player1.field.field.count == 0{
+                p1GameItems.append(handNode)
+            }else{
+                p1GameItems.insert(handNode, at: player1.hand.hand.count + 2)
+            }
         }else{
-            p2GameItems.append(handNode)
+            if player2.field.field.count == 0{
+                p2GameItems.append(handNode)
+            }else{
+                p2GameItems.insert(handNode, at: player2.hand.hand.count + 2)
+            }
         }
     }
 
@@ -400,20 +411,22 @@ class MainGameScene: SKScene {
         if player1.activePlayer{
             playerOnesTurn()
         }else{
-            playerTwosTurn()
+            //playerTwosTurn()
         }
     }
     
     func playerOnesTurn(){
         if currentPhase == 0{
-            let fieldIndex = 3 + player1.hand.hand.count
+            var fieldIndex = 3 + player1.hand.hand.count
             for card in player1.field.field{
                 if card.tapped{
+                    card.untap()
                     p1GameItems[fieldIndex].run(untap)
                 }
-            }
-            for card in p1GameItems{
-                print(card.name!)
+                card.attacking = false
+                card.blocked = false
+                card.summoningSickness = false
+                fieldIndex += 1
             }
             playTurn(x: Int(frame.midX), y: Int(frame.midY))
         }else if currentPhase == 1{
@@ -421,30 +434,27 @@ class MainGameScene: SKScene {
                 showGameOverScene(user: "Oliver")
                 print("Game Over! \(player1) has no cards left to draw. \(player2.name) Wins!")
             }else{
-                var startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.p1GameItems[0].frame.width)
-                startX += self.elementWidth*3/4*(player1.hand.hand.count)
-                let startY = Int(self.frame.minY) + self.sceneYBuffer
+                var startXP1 = Int(self.frame.minX) + self.sceneXBuffer + Int(self.p1GameItems[0].frame.width)
+                startXP1 += self.elementWidth*3/4*(player1.hand.hand.count)
+                let startYP1 = Int(self.frame.minY) + self.sceneYBuffer
                 player1.drawCard()
-                createHandNode(card: player1.hand.hand.last!, player: player1, x: startX, y: startY)
-            }
-            for card in p1GameItems{
-                print(card.name!)
+                createHandNode(card: player1.hand.hand.last!, player: player1, x: startXP1, y: startYP1)
             }
             playTurn(x: Int(frame.midX), y: Int(frame.midY))
-        }else if currentPhase == 2{
+        }else if currentPhase == 2 || currentPhase == 6{
             if p1Target > 2{
                 if p1Target < player1.hand.hand.count + 3{
                     let cardIndex = p1Target - 3
                     let targetCard = player1.hand.hand[cardIndex]
+                    let startX = p1GameItems[3].position.x
                     if !player1.playedLand && targetCard.cost == 0{
                         player1.playedLand = true
-                        let startX = p1GameItems[3].position.x
-                        p1GameItems[p1Target].position = CGPoint(x: p1LandX, y: p1LandY)
-                        player1.field.add(card: player1.hand.remove(card: targetCard)!)
+                        p1GameItems[p1Target].position = CGPoint(x: p1LandX+10, y: p1LandY)
+                        p1GameItems.append(p1GameItems.remove(at: p1Target))
+                        player1.playCard(card: targetCard)
                         for i in cardIndex..<player1.hand.hand.count{
                             let newX = Int(startX) + self.elementWidth*3/4*i
-                            p1GameItems[p1Target + 1].position.x = CGFloat(newX)
-                            p1GameItems.swapAt(p1Target, p1Target + 1)
+                            p1GameItems[p1Target].position.x = CGFloat(newX)
                             p1Target += 1
                         }
                         if p1LandY == Int(p1GameItems[1].position.y) {
@@ -453,8 +463,17 @@ class MainGameScene: SKScene {
                         }else{
                             p1LandY -= 20
                         }
-                    }else if targetCard.cost > 0 && p1ManaPool >= targetCard.cost{
-                        //play non land
+                    }else if targetCard.cost > 0 && p1ManaPool >= targetCard.cost && (targetCard.cardType == "Creature" || targetCard.cardType == "Artifact Creature"){
+                        p1GameItems[p1Target].position = CGPoint(x: p1NonLandX+10, y: Int(frame.midY) - elementHeight + 20)
+                        p1GameItems.append(p1GameItems.remove(at: p1Target))
+                        player1.field.add(card: player1.hand.remove(card: targetCard)!)
+                        for i in cardIndex..<player1.hand.hand.count{
+                            let newX = Int(startX) + self.elementWidth*3/4*i
+                            p1GameItems[p1Target].position.x = CGFloat(newX)
+                            p1Target += 1
+                        }
+                        p1NonLandX += elementWidth + 10
+                        p1ManaPool -= targetCard.cost
                     }
                 }else{
                     let cardIndex = p1Target - 3 - player1.hand.hand.count
@@ -463,23 +482,66 @@ class MainGameScene: SKScene {
                         targetCard.tap()
                         p1GameItems[p1Target].run(tap)
                         p1ManaPool += 1
-                        print("Basic Land on Field Tapped")
                     }
                 }
             }
         }else if currentPhase == 3{
-            
+            if p1Target >= player1.hand.hand.count + 3{
+                let cardIndex = p1Target - 3 - player1.hand.hand.count
+                let targetCard = player1.field.field[cardIndex]
+                var vigilance = false
+                for attribute in targetCard.attributes{
+                    if attribute == "Vigilance" {
+                        vigilance = true
+                    }
+                }
+                if (targetCard.cardType == "Creature" || targetCard.cardType == "Artifact Creature") && !targetCard.tapped && (!targetCard.summoningSickness){
+                    if !vigilance{
+                        targetCard.tap()
+                        p1GameItems[p1Target].run(tap)
+                    }
+                    targetCard.attacking = true
+                }
+            }
         }else if currentPhase == 4{
             
         }else if currentPhase == 5{
-            if player1.life <= 0 {
-                showGameOverScene(user: "Oliver")
-                print("Game Over! \(player1.name) has 0 life. \(player2.name) Wins!")
+            for card in player1.field.field{
+                for attribute in card.attributes{
+                    if attribute == "Lifelink"{
+                        p1Life += card.atk!
+                    }
+                }
+                if card.attacking && !card.blocked{
+                    p2Life -= card.atk!
+                }else if (card.attacking && card.blocked){
+                    p2Life -= card.damage
+                }
             }
-        }else if currentPhase == 6{
-            
+            if player2.life <= 0 {
+                showGameOverScene(user: userID)
+                print("Game Over! \(player2.name) has 0 life. \(player1.name) Wins!")
+            }
         }else{
-            
+            if player1.hand.hand.count > 7{
+                targetNeeded = true
+                if p1Target < player1.hand.hand.count + 3 && p1Target > 2{
+                    let cardIndex = p1Target - 3
+                    let targetCard = player1.hand.hand[cardIndex]
+                    let startX = p1GameItems[3].position.x
+                    p1GameItems.remove(at: p1Target)
+                    player1.discardCard(card: targetCard)
+                    p1GameItems[1].texture = SKTexture(imageNamed: targetCard.image)
+                    for i in cardIndex..<player1.hand.hand.count{
+                        let newX = Int(startX) + self.elementWidth*3/4*i
+                        p1GameItems[p1Target].position.x = CGFloat(newX)
+                        p1Target += 1
+                    }
+                }
+            }else{
+                targetNeeded = false
+                playTurn(x: Int(frame.midX), y: Int(frame.midY))
+            }
         }
         p1Target = -1
         p2Target = -1
@@ -487,15 +549,30 @@ class MainGameScene: SKScene {
     
     func playerTwosTurn(){
         if currentPhase == 0{
-            
+            var fieldIndex = 3 + player2.hand.hand.count
+            for card in player2.field.field{
+                if card.tapped{
+                    card.untap()
+                    p2GameItems[fieldIndex].run(untap)
+                }
+                card.attacking = false
+                card.blocked = false
+                fieldIndex += 1
+            }
+            playTurn(x: Int(frame.midX), y: Int(frame.midY))
         }else if currentPhase == 1{
             if player2.library.library.count <= 0{
                 showGameOverScene(user: self.userID)
                 print("Game Over! \(player2) has no cards left to draw. \(player1.name) Wins!")
             }else{
-                //draw card
+                var p2startX = Int(self.frame.minX) + self.sceneXBuffer + Int(self.p2GameItems[0].frame.width)
+                p2startX += self.elementWidth*3/4*(player2.hand.hand.count)
+                let startYP2 = Int(self.frame.maxY) - self.sceneYBuffer - elementHeight
+                player1.drawCard()
+                createHandNode(card: player2.hand.hand.last!, player: player2, x: p2startX, y: startYP2)
             }
-        }else if currentPhase == 2{
+            playTurn(x: Int(frame.midX), y: Int(frame.midY))
+        }else if currentPhase == 2 || currentPhase == 6{
             
         }else if currentPhase == 3{
             
@@ -506,10 +583,14 @@ class MainGameScene: SKScene {
                 showGameOverScene(user: self.userID)
                 print("Game Over! \(player2.name) has 0 life. \(player1.name) Wins!")
             }
-        }else if currentPhase == 6{
-            
         }else{
-            
+            if player2.hand.hand.count > 7{
+                let node = p2GameItems.remove(at: player2.hand.hand.count + 2)
+                p2GameItems[1].texture = node.texture
+                player2.discardCard(card: player2.hand.hand.last!)
+            }else{
+                playTurn(x: Int(frame.midX), y: Int(frame.midY))
+            }
         }
     }
     
@@ -520,10 +601,6 @@ class MainGameScene: SKScene {
             player2.activePlayer = true
             p1ManaPool = 0
             activePlayerLabel.text = player2.name
-            if player1.hand.hand.count > 7{
-                print(player2.hand.hand.count)
-                //player1.discardCard(card: <#T##Cards#>)
-            }
         }else{
             player1.activePlayer = true
             player2.activePlayer = false
@@ -531,7 +608,6 @@ class MainGameScene: SKScene {
             p2ManaPool = 0
             activePlayerLabel.text = player1.name
             if player2.hand.hand.count > 7{
-                print(player2.hand.hand.count)
                 //player2.discardCard(card: <#T##Cards#>)
             }
         }
@@ -575,7 +651,7 @@ class MainGameScene: SKScene {
         let offsetX = elementWidth/2
         let offsetY = elementHeight/2
         
-        if x >= Int(frame.midX) - 50 && x <= Int(frame.midX) + 50 && y >= Int(frame.midY) - 20 && y <= Int(frame.midY) + 20{
+        if x >= Int(frame.midX) - 50 && x <= Int(frame.midX) + 50 && y >= Int(frame.midY) - 20 && y <= Int(frame.midY) + 20 && !targetNeeded{
             currentPhase += 1
             updatePhaseLabel()
         }
